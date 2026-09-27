@@ -5,7 +5,8 @@
 - 검증 코드 commit: `df3a86b5507217ca4d8f43dbe3e7c3c62e2ee60d`
 - 각 실행은 같은 commit의 새 Git archive에서 시작. 이전 data/cache 산출물 미사용.
 - Python 3.12.14, FFmpeg/ffprobe 6.1.1, Linux x86_64.
-- 설치와 installed CLI 도움말도 확인. macOS에서의 직접 실행은 아직 미검증.
+- 설치와 installed CLI 도움말도 확인. 이 Linux 검증 당시 macOS 직접 실행은 미검증이었다.
+  이후 결과는 [macOS 검증 보고서](MACOS_REPORT.md)를 확인한다.
 
 ## 실제 결과
 
@@ -40,6 +41,7 @@ FFmpeg가 전체 final.mp4를 끝까지 decode한 뒤에만 성공 상태로 기
 - 프로젝트 코드, 23개 원본 문서 기반 정리본, 구현 결정, 다음 작업 인계.
 - `verification/`: 실제 테스트 로그와 세 실행의 JSON/JSONL 증거.
 - `sample/`: 첫 60분 테스트 영상, 썸네일, 메타데이터, provenance/manifest 사본.
+  공개 Git 저장소에는 sample/과 생성 음원·영상을 포함하지 않는다.
 - 대용량 source WAV/premaster/master는 전달 묶음에서 제외했다. 코드를 실행하면 재생성된다.
   따라서 sample/과 verification/의 manifest는 **검증 당시 기록 사본**이며,
   이 폴더를 data/runs로 옮겨 inspect/resume하는 용도가 아니다.

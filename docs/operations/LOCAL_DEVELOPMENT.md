@@ -11,6 +11,8 @@
 
 ## 초기 설정
 
+macOS에서는 `brew install python@3.12 ffmpeg`로 실행 도구를 설치한다.
+
 ```bash
 python3.12 -m venv .venv
 source .venv/bin/activate
@@ -19,6 +21,11 @@ pip install -e '.[dev]'
 cp .env.example .env
 python main.py doctor
 ```
+
+1분 확인은 `python main.py generate --duration-minutes 1 --run-id quick-test`로 실행한다.
+이미 완료된 ID는 새 생성에 재사용하지 않는다. 검증만 하려면
+`python main.py generate --run-id quick-test --resume`를 실행한다.
+FFmpeg 9의 loudnorm JSON 뒤 통계 로그도 지원한다.
 
 doctor/generate/inspect는 구현되어 있다. 나머지 기능은 Phase별로 구현한다.
 

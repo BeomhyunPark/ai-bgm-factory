@@ -77,6 +77,9 @@ python main.py feedback build
 현재 **Phase 0 기반 + Phase 1 오프라인 구현**을 포함한다. 네트워크 차단 환경에서 60분 인수 테스트를 3회 연속 통과했다.
 상세 결과는 [검증 보고서](verification/REPORT.md), 다음 작업은 [다음 작업](docs/roadmap/NEXT_TASK.md)을 확인한다.
 
+2026-09-28 macOS에서도 1분 생성·inspect·resume와 일반 테스트 48개를 통과했다.
+환경과 측정 결과는 [맥북 검증 보고서](verification/MACOS_REPORT.md)를 확인한다.
+
 [구현 결정과 한계](docs/architecture/DECISIONS.md)를 먼저 확인한다. 테스트 음원은 상업용 생성물이 아니며 업로드가 차단되어 있다. 실제 음악 API는 아직 연결하지 않았다.
 
 

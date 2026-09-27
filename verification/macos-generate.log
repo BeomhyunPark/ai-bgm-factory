@@ -1,0 +1,21 @@
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:02.775028+00:00", "run_id": "macbook-verified-20260928", "stage": "initialize", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:02.793351+00:00", "run_id": "macbook-verified-20260928", "stage": "initialize", "attempt": 1, "duration_ms": 17.38, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:02.794038+00:00", "run_id": "macbook-verified-20260928", "stage": "concept", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:02.795315+00:00", "run_id": "macbook-verified-20260928", "stage": "concept", "attempt": 1, "duration_ms": 0.69, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:02.795910+00:00", "run_id": "macbook-verified-20260928", "stage": "music_generate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:02.931107+00:00", "run_id": "macbook-verified-20260928", "stage": "music_generate", "attempt": 1, "duration_ms": 133.99, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:02.932371+00:00", "run_id": "macbook-verified-20260928", "stage": "audio_qc", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:02.982698+00:00", "run_id": "macbook-verified-20260928", "stage": "audio_qc", "attempt": 1, "duration_ms": 49.09, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:02.984028+00:00", "run_id": "macbook-verified-20260928", "stage": "audio_master", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:06.016380+00:00", "run_id": "macbook-verified-20260928", "stage": "audio_master", "attempt": 1, "duration_ms": 3030.7, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:06.017812+00:00", "run_id": "macbook-verified-20260928", "stage": "provenance_gate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:06.019319+00:00", "run_id": "macbook-verified-20260928", "stage": "provenance_gate", "attempt": 1, "duration_ms": 0.28, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:06.020622+00:00", "run_id": "macbook-verified-20260928", "stage": "visual_generate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:06.037776+00:00", "run_id": "macbook-verified-20260928", "stage": "visual_generate", "attempt": 1, "duration_ms": 15.75, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:06.039267+00:00", "run_id": "macbook-verified-20260928", "stage": "render", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:06.660998+00:00", "run_id": "macbook-verified-20260928", "stage": "render", "attempt": 1, "duration_ms": 619.94, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:06.662699+00:00", "run_id": "macbook-verified-20260928", "stage": "metadata", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:06.667906+00:00", "run_id": "macbook-verified-20260928", "stage": "metadata", "attempt": 1, "duration_ms": 3.61, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:06.669553+00:00", "run_id": "macbook-verified-20260928", "stage": "package_validate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T15:14:06.740169+00:00", "run_id": "macbook-verified-20260928", "stage": "package_validate", "attempt": 1, "duration_ms": 68.73, "status": "succeeded"}
+{"schema_version": "1.0.0", "run_id": "macbook-verified-20260928", "status": "ready_for_review", "publication": {"privacy_status": "private", "approval_required": true, "upload_eligible": false, "rights_status": "blocked"}, "output": "/Users/hyunee/Developer/greengroove/ai-bgm-factory/data/runs/macbook-verified-20260928"}

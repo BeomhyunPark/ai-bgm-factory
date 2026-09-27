@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "verified_at": "2026-09-28 (Asia/Seoul)",
+  "run_id": "macbook-verified-20260928",
+  "python": "3.12.14",
+  "platform": "macOS 27.0 arm64",
+  "ffmpeg": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "video": {
+    "schema_version": "1.0.0",
+    "status": "passed",
+    "duration_seconds": 60.0,
+    "video_duration": 60.0,
+    "audio_duration": 60.0,
+    "av_delta_seconds": 0.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1280,
+    "height": 720,
+    "full_decode_passed": true
+  },
+  "master": {
+    "schema_version": "1.0.0",
+    "status": "passed",
+    "integrated_lufs": -14.0,
+    "true_peak_dbtp": -7.26,
+    "normalization": "two_pass_loudnorm",
+    "source_gain_target_rms_dbfs": -20,
+    "crossfade_seconds": 2,
+    "pre_measurements": {
+      "input_i": "-18.44",
+      "input_tp": "-11.70",
+      "input_lra": "1.20",
+      "input_thresh": "-28.45",
+      "output_i": "-13.97",
+      "output_tp": "-7.24",
+      "output_lra": "1.10",
+      "output_thresh": "-23.98",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.03"
+    }
+  },
+  "implementation_sha256": "ecb1a27127004cd44ebdb582e3d8d56a1908aedab1552a7cb8e5bec1bf84e97b",
+  "artifacts": {
+    "final.mp4": {
+      "bytes": 788325,
+      "sha256": "b38a0ac4f0a098bc25e86bf4e5d181e710dc939b9c9d17d02344f42178b04bc0"
+    },
+    "thumbnail.jpg": {
+      "bytes": 38070,
+      "sha256": "d796eb6edbf26ab70310afafba05d8933ecb5cf023f3f98acf55b77b5bb32fc6"
+    },
+    "metadata.json": {
+      "bytes": 1733,
+      "sha256": "3adfd2ef1dc066153eab0b1349cd2d7921052ecba3541dc76267f3cf21106212"
+    },
+    "provenance.json": {
+      "bytes": 14453,
+      "sha256": "44cbed331d832ea0fc5346209babc3cfe6a05b4983afc4f59091f4fa8563271b"
+    },
+    "manifest.json": {
+      "bytes": 14152,
+      "sha256": "8d998c2524205cbca0395bbcd14d0a845bebc918d0ca6501522ba7d5c95bfe94"
+    }
+  }
+}

@@ -75,7 +75,15 @@ def measure_loudness(path):
     start = result.stderr.rfind("{\n")
     if start < 0:
         raise FactoryError("FFmpeg did not report loudness measurements")
-    return json.loads(result.stderr[start:])
+    # FFmpeg can append progress/statistics after the loudnorm JSON object.
+    try:
+        measured, _ = json.JSONDecoder().raw_decode(result.stderr[start:])
+        required = ("input_i", "input_tp", "input_lra", "input_thresh", "target_offset")
+        if not all(math.isfinite(float(measured[key])) for key in required):
+            raise ValueError
+    except (ValueError, KeyError, TypeError):
+        raise FactoryError("FFmpeg reported invalid loudness measurements") from None
+    return measured
 
 
 def master_audio(paths, reports, output, duration, crossfade):

@@ -1,0 +1,11 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.14, pytest-9.1.1, pluggy-1.6.0
+rootdir: /Users/hyunee/Developer/greengroove/ai-bgm-factory
+configfile: pyproject.toml
+testpaths: tests
+collected 49 items / 1 deselected / 48 selected
+
+tests/test_contracts.py ..............................................   [ 95%]
+tests/test_pipeline.py ..                                                [100%]
+
+====================== 48 passed, 1 deselected in 12.40s =======================

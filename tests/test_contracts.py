@@ -3,13 +3,14 @@ import sqlite3
 import wave
 from dataclasses import replace
 from pathlib import Path
+from types import SimpleNamespace
 
 import numpy as np
 import pytest
 
 from ai_bgm_factory.cli import doctor, main
 from ai_bgm_factory.config import Config, FactoryError, load_config
-from ai_bgm_factory.media import audio_qc
+from ai_bgm_factory.media import audio_qc, measure_loudness
 from ai_bgm_factory.providers import PROMPTS, DummyProvider, GenerationRequest
 from ai_bgm_factory.schemas import validate, validator
 from ai_bgm_factory.storage import Store, run_lock
@@ -148,3 +149,21 @@ def test_help_and_doc_links():
         for link in re.findall(r"\]\(([^)]+)\)", path.read_text()):
             if "://" not in link and not link.startswith("#"):
                 assert (path.parent / link.split("#")[0]).exists(), (path, link)
+
+
+def test_loudness_json_with_trailing_ffmpeg_statistics(monkeypatch):
+    measurements = dict(input_i="-14", input_tp="-7", input_lra="1",
+                        input_thresh="-24", target_offset="0")
+    stderr = "[Parsed_loudnorm_0]\n" + json.dumps(measurements, indent=2)
+    stderr += "\n[out#0/null] video:0KiB audio:11250KiB\n"
+    monkeypatch.setattr("ai_bgm_factory.media.command",
+                        lambda args: SimpleNamespace(stderr=stderr))
+    assert measure_loudness("unused.wav") == measurements
+
+
+@pytest.mark.parametrize("payload", ["{\ninvalid}", "{\n}", '{\n"input_i": "-inf"}'])
+def test_invalid_loudness_report_rejected(monkeypatch, payload):
+    monkeypatch.setattr("ai_bgm_factory.media.command",
+                        lambda args: SimpleNamespace(stderr=payload))
+    with pytest.raises(FactoryError, match="invalid loudness"):
+        measure_loudness("unused.wav")
