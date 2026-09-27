@@ -18,6 +18,10 @@ inspect/resume를 확인했다. 이는 맥북 실행 검증이며 clean checkout
 2026-09-28: [Phase 2 음악 API 후보 비교](MUSIC_PROVIDER_COMPARISON.md) 완료.
 Stable Audio 3.0을 첫 기술 평가 후보로 기록했다. 실제 provider 승인·연결과 유료 호출은 미실시다.
 
+2026-09-28: [오프라인 음악 job 계약](../architecture/MUSIC_JOBS.md) 구현.
+fake adapter, 영속화된 조회 재개, 비용 예약·일일 한도와 오류 fixture를 추가했다.
+기존 generate와 분리되어 있으며 실제 음악 API 및 Phase 2 exit criteria는 미완료다.
+
 ## 전체 요약
 
 | Phase | 목표 | 외부 side effect |

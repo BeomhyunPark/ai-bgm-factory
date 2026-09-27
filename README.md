@@ -78,6 +78,8 @@ python main.py feedback build
 상세 결과는 [검증 보고서](verification/REPORT.md), 다음 작업은 [다음 작업](docs/roadmap/NEXT_TASK.md)을 확인한다.
 Phase 2 준비로 [음악 API 후보 비교](docs/roadmap/MUSIC_PROVIDER_COMPARISON.md)를 작성했다.
 첫 기술 평가 후보는 Stable Audio 3.0이며 서비스·예산·권리 승인과 실제 API 연결은 아직이다.
+[오프라인 음악 job 계약](docs/architecture/MUSIC_JOBS.md)의 fake adapter와 재시도·비용 한도 테스트도
+추가했다. 이 모듈은 기존 generate와 분리되어 있으며 외부 서비스를 호출하지 않는다.
 
 2026-09-28 macOS에서도 1분 생성·inspect·resume와 일반 테스트 48개를 통과했다.
 환경과 측정 결과는 [맥북 검증 보고서](verification/MACOS_REPORT.md)를 확인한다.

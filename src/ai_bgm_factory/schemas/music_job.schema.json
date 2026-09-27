@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-bgm-factory:music_job:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "request_id", "run_id", "job_id", "status",
+    "reserved_cents", "actual_cents", "rights_status", "intended_for_testing_only",
+    "upload_eligible"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "request_id": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "run_id": {"type": "string", "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_-]{0,79}$"},
+    "job_id": {"type": "string", "pattern": "^[a-zA-Z0-9_-]{1,128}$"},
+    "status": {"const": "succeeded"},
+    "reserved_cents": {"type": "integer", "minimum": 1},
+    "actual_cents": {"type": "integer", "minimum": 0},
+    "rights_status": {"const": "blocked"},
+    "intended_for_testing_only": {"const": true},
+    "upload_eligible": {"const": false}
+  }
+}
