@@ -79,6 +79,8 @@ python main.py feedback build
 
 2026-09-28 macOS에서도 1분 생성·inspect·resume와 일반 테스트 48개를 통과했다.
 환경과 측정 결과는 [맥북 검증 보고서](verification/MACOS_REPORT.md)를 확인한다.
+이어 60분 smoke를 포함한 전체 테스트 49개도 통과했다(205초).
+60분 영상 전체 디코딩, A/V 차이 0초, -14 LUFS, 완료 run 재개를 확인했다.
 
 [구현 결정과 한계](docs/architecture/DECISIONS.md)를 먼저 확인한다. 테스트 음원은 상업용 생성물이 아니며 업로드가 차단되어 있다. 실제 음악 API는 아직 연결하지 않았다.
 

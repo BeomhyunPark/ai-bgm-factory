@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "verified_at": "2026-09-28 (Asia/Seoul)",
+  "source_commit": "1f1bcee959babbbac34c6e3724b518c28e6c70e2",
+  "implementation_sha256": "ecb1a27127004cd44ebdb582e3d8d56a1908aedab1552a7cb8e5bec1bf84e97b",
+  "run_id": "4f6d563cfbac4510977a32f1ae04fb1e",
+  "local_output": "data/validation/macos-60min-3bc671c2/test_full_60_minute_default0/data/runs/4f6d563cfbac4510977a32f1ae04fb1e",
+  "tests": {
+    "passed": 49,
+    "elapsed_seconds": 205.0,
+    "smoke_included": true
+  },
+  "video": {
+    "schema_version": "1.0.0",
+    "status": "passed",
+    "duration_seconds": 3600.0,
+    "video_duration": 3600.0,
+    "audio_duration": 3600.0,
+    "av_delta_seconds": 0.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1280,
+    "height": 720,
+    "full_decode_passed": true
+  },
+  "master": {
+    "schema_version": "1.0.0",
+    "status": "passed",
+    "integrated_lufs": -14.0,
+    "true_peak_dbtp": -7.6,
+    "normalization": "two_pass_loudnorm",
+    "source_gain_target_rms_dbfs": -20,
+    "crossfade_seconds": 2,
+    "pre_measurements": {
+      "input_i": "-18.12",
+      "input_tp": "-11.72",
+      "input_lra": "0.30",
+      "input_thresh": "-28.12",
+      "output_i": "-13.90",
+      "output_tp": "-7.41",
+      "output_lra": "0.20",
+      "output_thresh": "-23.90",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.10"
+    }
+  },
+  "publication": {
+    "privacy_status": "private",
+    "approval_required": true,
+    "upload_eligible": false,
+    "rights_status": "blocked"
+  },
+  "resume_manifest_unchanged": true,
+  "artifacts": {
+    "final.mp4": {
+      "bytes": 45004325,
+      "sha256": "5179e479fc8fd87cf8eb0f6da9c1db41d4167590cd6a998f3161d3d757b23ad9"
+    },
+    "thumbnail.jpg": {
+      "bytes": 38070,
+      "sha256": "d796eb6edbf26ab70310afafba05d8933ecb5cf023f3f98acf55b77b5bb32fc6"
+    },
+    "metadata.json": {
+      "bytes": 1746,
+      "sha256": "bf32e252d67c3d6627d14a486ab3295e94a56e35b54ab3969e889adc7acfab4c"
+    },
+    "provenance.json": {
+      "bytes": 14461,
+      "sha256": "205a877d20eeaec7054558673c93711b3c3c3f6f4ef597ad12203e9652defa08"
+    },
+    "manifest.json": {
+      "bytes": 14183,
+      "sha256": "c6100b16dcf9b46e7dadf5ae86dcf16b579360fabb380cc73c07670bc13a87a5"
+    }
+  }
+}

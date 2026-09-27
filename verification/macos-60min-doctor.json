@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "status": "passed",
+  "checks": {
+    "python_3_12_plus": true,
+    "ffmpeg": true,
+    "ffprobe": true,
+    "libx264": true,
+    "aac": true,
+    "loudnorm": true,
+    "acrossfade": true,
+    "data_parent_writable": true,
+    "disk_space": true,
+    "credentials_required": false,
+    "external_services_enabled": false
+  },
+  "media_profile": "1280x720, 1 fps static test card; H.264/AAC"
+}

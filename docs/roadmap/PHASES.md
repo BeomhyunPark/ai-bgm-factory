@@ -9,6 +9,12 @@
 45개 테스트(60분 smoke 포함)가 네트워크 차단 상태로 연속 통과했다.
 상세 기록은 전달 묶음의 verification/REPORT.md를 확인한다. Phase 2 실제 provider는 미선정이다.
 
+2026-09-28: macOS에서 FFmpeg 9 호환성 수정 후 60분 smoke 포함 전체 테스트
+49개를 1회 통과했다. 영상 3600초, A/V 차이 0초, -14 LUFS이며 전체 디코딩과
+inspect/resume를 확인했다. 이는 맥북 실행 검증이며 clean checkout 3회 및
+커널 네트워크 차단 인수 검증을 대체하지 않는다.
+상세 결과: [macOS 보고서](../../verification/MACOS_REPORT.md).
+
 ## 전체 요약
 
 | Phase | 목표 | 외부 side effect |

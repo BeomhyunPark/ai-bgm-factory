@@ -2,24 +2,23 @@
 
 ## 현재 위치
 
-Phase 0 + Phase 1 오프라인 코드가 준비되어 있다. 구체적인 검증 결과는 배포 묶음의
-`verification/REPORT.md`와 원본 로그를 확인한다. source commit은 그 보고서에 기록한다.
+Phase 0 + Phase 1 오프라인 코드와 GitHub main 업로드가 완료되어 있다.
+Linux 검증은 `verification/REPORT.md`, 맥북 설치와 1분 검증은
+`verification/MACOS_REPORT.md`를 확인한다. 맥북 60분 smoke 포함 49개 전체 테스트도
+1회 통과했다. source commit과 구현 hash는 검증 증거에 기록한다.
 
-## 사용자 맥북에서 시작
+## 구성된 사용자 맥북에서 실행
 
 ```bash
 cd ai-bgm-factory
-python3.12 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e '.[dev]'
-cp .env.example .env
 python main.py doctor
 python main.py generate --duration-minutes 1
 ```
 
-FFmpeg가 없는 경우 Homebrew로 `brew install ffmpeg`. API 키 없이 동작한다.
-Git repository 초기화나 GitHub 연동은 사용자의 실제 작업 경로에서 하면 된다.
-압축 파일에는 Git 내부 DB와 자격 증명을 넣지 않는다.
+Python 3.12, FFmpeg, `.venv`와 dummy `.env`가 구성되어 있으며 API 키 없이 동작한다.
+새 머신 설치는 [로컬 개발 가이드](../operations/LOCAL_DEVELOPMENT.md)를 따른다.
+생성 음원·영상, `.env`, 인증 파일, 캐시는 Git에서 제외한다.
 
 ## Phase 2 착수 순서
 
