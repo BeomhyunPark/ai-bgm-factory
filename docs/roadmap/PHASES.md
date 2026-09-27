@@ -15,6 +15,9 @@ inspect/resume를 확인했다. 이는 맥북 실행 검증이며 clean checkout
 커널 네트워크 차단 인수 검증을 대체하지 않는다.
 상세 결과: [macOS 보고서](../../verification/MACOS_REPORT.md).
 
+2026-09-28: [Phase 2 음악 API 후보 비교](MUSIC_PROVIDER_COMPARISON.md) 완료.
+Stable Audio 3.0을 첫 기술 평가 후보로 기록했다. 실제 provider 승인·연결과 유료 호출은 미실시다.
+
 ## 전체 요약
 
 | Phase | 목표 | 외부 side effect |

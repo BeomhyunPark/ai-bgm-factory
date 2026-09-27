@@ -76,6 +76,8 @@ python main.py feedback build
 
 현재 **Phase 0 기반 + Phase 1 오프라인 구현**을 포함한다. 네트워크 차단 환경에서 60분 인수 테스트를 3회 연속 통과했다.
 상세 결과는 [검증 보고서](verification/REPORT.md), 다음 작업은 [다음 작업](docs/roadmap/NEXT_TASK.md)을 확인한다.
+Phase 2 준비로 [음악 API 후보 비교](docs/roadmap/MUSIC_PROVIDER_COMPARISON.md)를 작성했다.
+첫 기술 평가 후보는 Stable Audio 3.0이며 서비스·예산·권리 승인과 실제 API 연결은 아직이다.
 
 2026-09-28 macOS에서도 1분 생성·inspect·resume와 일반 테스트 48개를 통과했다.
 환경과 측정 결과는 [맥북 검증 보고서](verification/MACOS_REPORT.md)를 확인한다.
