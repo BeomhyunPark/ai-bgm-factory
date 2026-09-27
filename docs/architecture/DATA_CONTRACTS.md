@@ -9,6 +9,13 @@ Phase 2 준비용 성공 job receipt는 별도 `music_job.schema.json` 1.0.0을 
 전용 SQLite ledger는 user_version 1이며 [음악 job 계약](MUSIC_JOBS.md)을 따른다.
 기존 Phase 1 산출물의 schema version은 유지한다.
 
+길이 계획은 `track_plan.schema.json` **1.0.0**으로 검증한다. 정수 프레임으로 target,
+crossfade, source 길이와 시작 위치를 기록한다. config snapshot은 **1.1.0**으로 갱신하여
+`track_count`를 `min_track_count`로 교체하고 `crossfade_seconds`를 추가했다.
+pipeline snapshot에는 providers와 track_plan도 포함한다. manifest 외형 및 metadata/provenance/QC는
+1.0.0을 유지한다. 이전 구현의 완료 파일은 그대로 보존하고 새 코드는 implementation hash가
+다른 run의 재개를 거부한다. 기존 파일을 자동 변환하거나 덮어쓰지 않는다.
+
 ## `manifest.json`
 
 ```json

@@ -49,9 +49,9 @@ Beatoven은 음악 중심 영상의 허용 범위를 먼저 확인해야 한다.
 
 ## 60분 제작과 비용 계산
 
-현재 코드는 8트랙 고정이고, crossfade 손실을 포함하면 트랙당 450초보다 길어야 한다.
-Stable Audio 3.0의 요청 상한 380초로는 현재 설정을 그대로 사용할 수 없다 [S1].
-Phase 2에서는 FR-003의 8~12트랙 범위에서 길이 계획을 먼저 구현한다.
+비교 당시 코드는 8트랙 고정이었다. crossfade 손실까지 포함하면 트랙당 450초보다 길어
+Stable Audio 3.0의 요청 상한 380초로는 그대로 사용할 수 없다 [S1].
+이후 FR-003의 8~12트랙 범위에서 capability 기반 길이 계획을 구현했다.
 
 계산 예시(설계 가정): crossfade 5초, 10트랙이면 `(3600 + 9 × 5) / 10 = 364.5초`다.
 실제 요청은 API의 길이 정밀도를 검증하고 여유 있게 생성한 뒤 master를 정확히 trim한다.
@@ -79,7 +79,8 @@ provider가 idempotency key를 지원하는지는 별도 검증한다. 로컬 ID
 보컬·유사도 QC는 Phase 3, 권리 gate 강화는 Phase 4이며 업로드는 계속 disabled다.
 
 2026-09-28 업데이트: [fake job adapter와 재시도·비용 계약 테스트](../architecture/MUSIC_JOBS.md)를
-기존 generate와 분리해 구현했다. 다음 개발 단위는 음악 provider 분리와 길이 계획이다.
+기존 generate와 분리해 구현했다. 음악 provider 분리와 길이 계획도 generate에 적용했다.
+다음은 실제 adapter의 응답 fixture/transport 계약 준비와 서비스·예산·권리 근거 확정이다.
 실제 provider를 활성화하기 전에 채널 용도, 적용 API 계약과 계정 tier, 예산을 확정한다.
 API 키는 채팅·문서·fixture에 기록하지 않는다.
 

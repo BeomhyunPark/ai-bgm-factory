@@ -30,7 +30,8 @@ class Config:
     duration_seconds: float = 3600.0
     seed: int = 42
     timezone: str = "Asia/Seoul"
-    track_count: int = 8
+    min_track_count: int = 8
+    crossfade_seconds: float = 2.0
     sample_rate: int = 48000
     width: int = 1280
     height: int = 720
@@ -43,7 +44,12 @@ class Config:
             raise FactoryError("Duration must resolve to whole seconds for the 1 fps test profile")
         if not 0 <= self.seed <= 2**32 - 1:
             raise FactoryError("Seed must be an unsigned 32-bit integer")
-        if self.track_count != 8 or self.sample_rate != 48000 or self.fps != 1:
+        if type(self.min_track_count) is not int or not 8 <= self.min_track_count <= 12:
+            raise FactoryError("Minimum track count must be between 8 and 12")
+        if (type(self.crossfade_seconds) not in (int, float)
+                or not math.isfinite(self.crossfade_seconds) or self.crossfade_seconds <= 0):
+            raise FactoryError("Crossfade must be positive and finite")
+        if self.sample_rate != 48000 or self.fps != 1:
             raise FactoryError("Phase 1 media settings are fixed")
         try:
             ZoneInfo(self.timezone)
@@ -52,7 +58,7 @@ class Config:
 
     def snapshot(self):
         return {
-            "schema_version": "1.0.0",
+            "schema_version": "1.1.0",
             **{k: v for k, v in asdict(self).items() if k != "data_dir"},
             "provider": "dummy",
             "privacy_status": "private",
@@ -61,7 +67,7 @@ class Config:
         }
 
 
-def load_config(*, duration_minutes=None, seed=42, data_dir=None) -> Config:
+def load_config(*, duration_minutes=None, seed=42, data_dir=None, min_tracks=None) -> Config:
     env = read_env(Path(".env"))
     for name in (
         "ENABLE_MUSIC_API",
@@ -87,6 +93,8 @@ def load_config(*, duration_minutes=None, seed=42, data_dir=None) -> Config:
             if duration_minutes is not None
             else env.get("DEFAULT_DURATION_MINUTES", "60")
         )
+        count = int(env.get("MIN_TRACK_COUNT", "8")) if min_tracks is None else min_tracks
+        crossfade = float(env.get("CROSSFADE_SECONDS", "2"))
     except (ValueError, TypeError):
         raise FactoryError("Invalid duration") from None
     return Config(
@@ -94,4 +102,6 @@ def load_config(*, duration_minutes=None, seed=42, data_dir=None) -> Config:
         minutes * 60,
         seed,
         env.get("TIMEZONE", "Asia/Seoul"),
+        min_track_count=count,
+        crossfade_seconds=crossfade,
     )

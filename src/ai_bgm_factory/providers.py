@@ -44,6 +44,10 @@ TRACK_NAMES = [
     "Soft Landing",
     "Blue Hour",
     "Last Commit",
+    "Distant Lamp",
+    "Gentle Drift",
+    "Still Room",
+    "Morning Haze",
 ]
 
 
@@ -54,6 +58,7 @@ class DummyProvider:
             "supports_instrumental_flag": True,
             "supports_async_job": False,
             "max_duration_seconds": 1000,
+            "min_duration_seconds": 1,
             "commercial_use_status": "blocked",
             "network_required": False,
         }
@@ -62,7 +67,7 @@ class DummyProvider:
         # Phase 1 accepts ONLY closed internal fixtures, never arbitrary style text.
         if request.kind not in PROMPTS or request.prompt != PROMPTS[request.kind]:
             raise FactoryError("Only internal dummy prompt templates are supported")
-        if not 0 <= request.seed <= 2**32 - 1 or not 0 <= request.slot < 8:
+        if not 0 <= request.seed <= 2**32 - 1 or not 0 <= request.slot < 12:
             raise FactoryError("Invalid dummy request")
         if request.kind == "audio" and not 1 <= request.duration_seconds <= 1000:
             raise FactoryError("Unsupported dummy audio duration")

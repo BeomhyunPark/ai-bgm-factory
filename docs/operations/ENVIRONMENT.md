@@ -13,6 +13,8 @@
 | `DATA_DIR` | DB와 run output root | `./data` |
 | `TIMEZONE` | 표시/스케줄 timezone | `Asia/Seoul` |
 | `DEFAULT_DURATION_MINUTES` | 목표 영상 길이 | `60` |
+| `MIN_TRACK_COUNT` | 최소 소스 수, 8~12 정수; provider 상한에 따라 증가 | `8` |
+| `CROSSFADE_SECONDS` | 인접 소스 겹침 길이, 양수이며 48 kHz 샘플 단위 | `2` |
 | `DEFAULT_PRIVACY_STATUS` | YouTube upload privacy | 반드시 `private` |
 | `MAX_DAILY_GENERATIONS` | 비용/대량생산 guard | `1` |
 | `MAX_DAILY_UPLOADS` | 업로드 guard | `1` |
@@ -95,7 +97,12 @@ threshold 변경은 versioning하고 기존 run에 소급 적용하지 않는다
 
 현재 읽는 변수는 루트 `.env.example`에 있는 Runtime/Provider/Feature flag다.
 APP_ENV, DATA_DIR, TIMEZONE, DEFAULT_DURATION_MINUTES, DEFAULT_PRIVACY_STATUS,
+MIN_TRACK_COUNT, CROSSFADE_SECONDS,
 HUMAN_APPROVAL_REQUIRED, TEXT_PROVIDER/MUSIC_PROVIDER/IMAGE_PROVIDER와 5개 ENABLE_*을 검증한다.
 비밀값은 필요하지 않으며 config snapshot에 넣지 않는다. 모든 provider는 dummy만 허용한다.
 이 문서의 나머지 모델/예산/YouTube/QC/Operations 변수는 후속 Phase 설계이며 현재 동작을 바꾸지 않는다.
 QC는 버전이 고정된 코드 기준으로 적용하고 임계값을 환경 변수로 완화하지 않는다.
+
+`generate --min-tracks`는 MIN_TRACK_COUNT보다 우선한다. 재개 시 저장된 최소 트랙 수와
+crossfade를 복구하며, 명시한 --min-tracks가 저장값과 다르면 거부한다.
+생성 전 길이 계획에서 source 상한과 겹침 조건을 검증한다.

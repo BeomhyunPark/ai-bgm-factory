@@ -22,6 +22,11 @@ Stable Audio 3.0을 첫 기술 평가 후보로 기록했다. 실제 provider �
 fake adapter, 영속화된 조회 재개, 비용 예약·일일 한도와 오류 fixture를 추가했다.
 기존 generate와 분리되어 있으며 실제 음악 API 및 Phase 2 exit criteria는 미완료다.
 
+2026-09-28: 음악 provider 주입을 text/image와 분리하고 capability 기반 8~12트랙 계획을
+generate에 적용했다. 기본 8트랙, crossfade 2초는 유지한다. 실제 provider 연결은 아직 비활성이다.
+macOS에서 60분 smoke 포함 **101개 테스트 통과(212.07초)**.
+[검증 결과](../../verification/TRACK_PLANNING_REPORT.json)에 구현 hash와 음성·영상 측정값을 기록했다.
+
 ## 전체 요약
 
 | Phase | 목표 | 외부 side effect |

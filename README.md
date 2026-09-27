@@ -104,12 +104,16 @@ python main.py generate
 macOS에서 FFmpeg가 없다면 `brew install ffmpeg`를 먼저 실행한다.
 API 키나 유료 계정은 필요 없다. `.env`는 자동으로 읽으며 동일 환경 변수는 shell 값이 우선한다.
 기본값은 seed 42, 60분, 8트랙, 1280×720 정지 테스트 카드(1 fps), stereo 48 kHz다.
+`--min-tracks 10` 또는 `MIN_TRACK_COUNT=10`으로 최소 트랙 수를 지정할 수 있다.
+음악 provider의 길이 상한에 따라 최대 12개까지 늘리며, 불가능한 구성은 생성 전에 중단한다.
+crossfade 기본값은 `CROSSFADE_SECONDS=2`이며 계획·master·chapter에 같은 값을 적용한다.
 run당 중간 파일 약 2.2 GB 이상과 완성 MP4가 필요하며 여유 공간 10 GB를 권장한다.
 
 빠른 확인과 실패 재개:
 
 ```bash
 python main.py generate --duration-minutes 1 --run-id quick-test
+python main.py generate --duration-minutes 1 --min-tracks 10 --run-id ten-tracks
 python main.py inspect quick-test
 python main.py generate --duration-minutes 1 --run-id recovery-test --fail-stage render
 # 위 명령은 의도적으로 실패한다.
