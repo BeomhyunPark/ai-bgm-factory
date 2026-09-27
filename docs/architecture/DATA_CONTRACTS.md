@@ -5,6 +5,10 @@
 
 모든 JSON에는 `schema_version`을 둔다. 아래 예시는 최소 계약이며 구현 시 JSON Schema 파일로 분리한다.
 
+Phase 2 준비용 성공 job receipt는 별도 `music_job.schema.json` 1.0.0을 사용한다.
+전용 SQLite ledger는 user_version 1이며 [음악 job 계약](MUSIC_JOBS.md)을 따른다.
+기존 Phase 1 산출물의 schema version은 유지한다.
+
 ## `manifest.json`
 
 ```json

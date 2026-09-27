@@ -12,6 +12,7 @@
 - [파이프라인](architecture/PIPELINE.md): 단계별 입출력, 실패·재시도
 - [데이터 계약](architecture/DATA_CONTRACTS.md): manifest, metadata, provenance schema 초안
 - [Provider adapter](architecture/PROVIDER_ADAPTERS.md): 외부 생성 서비스 교체 규칙
+- [오프라인 음악 job 계약](architecture/MUSIC_JOBS.md): fake adapter, 재개, 비용 예약
 
 ## 3. 정책
 

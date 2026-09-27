@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0.0",
+  "success": ["queued", "running", "succeeded"],
+  "transient": ["429", "timeout", "503", "succeeded"],
+  "failure": ["running", "failed"],
+  "malformed": ["malformed"],
+  "pending": ["running"]
+}

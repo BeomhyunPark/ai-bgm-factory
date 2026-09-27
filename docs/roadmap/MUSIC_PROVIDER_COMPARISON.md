@@ -78,7 +78,8 @@ provider가 idempotency key를 지원하는지는 별도 검증한다. 로컬 ID
 방지된다고 주장하지 않는다. 실제 음악에 dummy의 `local_test_only` 권리 예외를 적용하지 않는다.
 보컬·유사도 QC는 Phase 3, 권리 gate 강화는 Phase 4이며 업로드는 계속 disabled다.
 
-다음 개발 단위는 **네트워크 없는 fake job adapter와 재시도·비용 계약 테스트**다.
+2026-09-28 업데이트: [fake job adapter와 재시도·비용 계약 테스트](../architecture/MUSIC_JOBS.md)를
+기존 generate와 분리해 구현했다. 다음 개발 단위는 음악 provider 분리와 길이 계획이다.
 실제 provider를 활성화하기 전에 채널 용도, 적용 API 계약과 계정 tier, 예산을 확정한다.
 API 키는 채팅·문서·fixture에 기록하지 않는다.
 
