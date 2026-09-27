@@ -53,6 +53,8 @@ def parser():
             p.add_argument("--seed", type=int, default=None)
             p.add_argument("--duration-minutes", type=float, default=None)
             p.add_argument("--run-id")
+            p.add_argument("--min-tracks", type=int, default=None,
+                           help="Minimum source count (8–12); may increase for provider limits")
             p.add_argument("--resume", action="store_true")
             p.add_argument("--fail-stage", choices=["render"], help="Test-only failure injection")
         if name == "inspect":
@@ -81,6 +83,7 @@ def main(argv=None):
             duration_minutes=getattr(args, "duration_minutes", None),
             seed=args.seed if getattr(args, "seed", None) is not None else 42,
             data_dir=args.data_dir,
+            min_tracks=getattr(args, "min_tracks", None),
         )
         if args.command == "doctor":
             result = doctor(config)
@@ -105,6 +108,8 @@ def main(argv=None):
                 ):
                     raise FactoryError("Resume duration differs from original run")
                 config = stored
+                if args.min_tracks is not None and args.min_tracks != stored.min_track_count:
+                    raise FactoryError("Resume minimum track count differs from original run")
             if doctor(config)["status"] != "passed":
                 raise FactoryError("Doctor failed; run doctor to inspect dependency/disk checks")
             result = Pipeline(config).execute(

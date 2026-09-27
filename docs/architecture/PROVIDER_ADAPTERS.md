@@ -10,13 +10,13 @@
 
 ```python
 class GenerationProvider(Protocol):
-    def capabilities(self) -> ProviderCapabilities: ...
+    def capabilities(self) -> dict: ...
     def validate_request(self, request: GenerationRequest) -> None: ...
-    def generate(self, request: GenerationRequest) -> GenerationResult: ...
-    def get_rights_evidence(self) -> RightsEvidence: ...
+    def generate(self, request: GenerationRequest, output: Path) -> dict: ...
+    def get_rights_evidence(self) -> dict: ...
 ```
 
-`GenerationResult`는 최소한 다음을 포함한다.
+생성 응답 dict의 목표 계약은 최소한 다음을 포함한다.
 
 - normalized asset location
 - provider/model/model version
@@ -26,6 +26,32 @@ class GenerationProvider(Protocol):
 - usage/cost
 - raw response reference
 - provider moderation result
+
+## 현재 pipeline 주입과 길이 계획
+
+`Pipeline(config, provider=..., music_provider=...)`에서 `provider`는 text/image,
+`music_provider`는 audio만 담당한다. 둘의 기본값은 각각 별도 DummyProvider다.
+기존 단일 provider 주입을 사용하던 코드는 음악용 인자를 명시해야 한다.
+현재는 network_required=false, blocked/test-only rights만 생성 전에 허용하며,
+provenance의 dummy 전용 계약도 유지한다. 실제 provider 연결 권한을 열지 않는다.
+
+음악 capability에는 `min_duration_seconds`와 `max_duration_seconds`가 필요하다.
+planner는 최소 8개(설정값)부터 최대 12개 사이에서 가능한 가장 작은 개수를 고른다.
+전체 source 프레임 합은 `목표 프레임 + crossfade 프레임 × (트랙 수 - 1)`이다.
+나머지 프레임을 앞 트랙부터 1개씩 배분해 목표 길이를 정확히 맞추고,
+각 source가 두 crossfade보다 길어야 한다. 상한은 내림, 하한은 올림하여 지킨다.
+불가능한 길이·겹침 구성은 run 생성이나 provider 호출 전에 실패한다.
+
+예: 3600초, 상한 380초, crossfade 2초이면 10트랙(각 361.8초)이다.
+crossfade 5초이면 10트랙(각 364.5초)이다. 이는 길이 계산이며 실제 음질 검증이 아니다.
+현재 QC 입력은 48 kHz stereo PCM fixture만 지원한다. 실제 44.1 kHz provider를 연결할 때는
+별도의 resample 및 원본·변환 provenance가 필요하다.
+
+계획은 initialize의 `track-plan.json`과 config snapshot에 저장한다.
+chapter는 계획의 시작 프레임에서 만들고 mastering은 같은 timeline crossfade를 읽는다.
+provider class/capability/rights와 계획을 config hash에 포함하여 설정이 달라진 재개를 막는다.
+같은 구현의 offline adapter 재개에는 같은 adapter와 capability를 다시 주입해야 한다.
+job lifecycle 모듈은 아직 별도이며 유료/비동기 API bridge는 후속 작업이다.
 
 ## 음악 provider 선택 체크리스트
 

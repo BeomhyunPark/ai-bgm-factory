@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "verified_at": "2026-09-28",
+  "implementation_sha256": "e624fdbe2b81091f7f3b76fd8e445580b3c7c983d0ff308c23b644640ad7adb2",
+  "test_result": {
+    "passed": 101,
+    "duration_seconds": 212.07,
+    "includes_60_minute_smoke": true
+  },
+  "status": "ready_for_review",
+  "publication": {
+    "privacy_status": "private",
+    "approval_required": true,
+    "upload_eligible": false,
+    "rights_status": "blocked"
+  },
+  "track_plan": {
+    "schema_version": "1.0.0",
+    "sample_rate": 48000,
+    "target_frames": 172800000,
+    "crossfade_frames": 96000,
+    "max_source_frames": 48000000,
+    "min_source_frames": 48000,
+    "tracks": [
+      {
+        "slot": 0,
+        "frames": 21684000,
+        "start_frame": 0
+      },
+      {
+        "slot": 1,
+        "frames": 21684000,
+        "start_frame": 21588000
+      },
+      {
+        "slot": 2,
+        "frames": 21684000,
+        "start_frame": 43176000
+      },
+      {
+        "slot": 3,
+        "frames": 21684000,
+        "start_frame": 64764000
+      },
+      {
+        "slot": 4,
+        "frames": 21684000,
+        "start_frame": 86352000
+      },
+      {
+        "slot": 5,
+        "frames": 21684000,
+        "start_frame": 107940000
+      },
+      {
+        "slot": 6,
+        "frames": 21684000,
+        "start_frame": 129528000
+      },
+      {
+        "slot": 7,
+        "frames": 21684000,
+        "start_frame": 151116000
+      }
+    ]
+  },
+  "audio": {
+    "schema_version": "1.0.0",
+    "status": "passed",
+    "integrated_lufs": -14.0,
+    "true_peak_dbtp": -7.6,
+    "normalization": "two_pass_loudnorm",
+    "source_gain_target_rms_dbfs": -20,
+    "crossfade_seconds": 2.0,
+    "pre_measurements": {
+      "input_i": "-18.12",
+      "input_tp": "-11.72",
+      "input_lra": "0.30",
+      "input_thresh": "-28.12",
+      "output_i": "-13.90",
+      "output_tp": "-7.41",
+      "output_lra": "0.20",
+      "output_thresh": "-23.90",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.10"
+    }
+  },
+  "video": {
+    "schema_version": "1.0.0",
+    "status": "passed",
+    "duration_seconds": 3600.0,
+    "video_duration": 3600.0,
+    "audio_duration": 3600.0,
+    "av_delta_seconds": 0.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1280,
+    "height": 720,
+    "full_decode_passed": true
+  },
+  "scope": "macOS working tree; not three clean offline acceptance runs"
+}

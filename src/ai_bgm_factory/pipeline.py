@@ -15,6 +15,7 @@ from .media import audio_qc, master_audio, render, validate_thumbnail
 from .providers import PROMPTS, DummyProvider, GenerationProvider, GenerationRequest
 from .schemas import validate
 from .storage import Store, run_lock
+from .track_planning import plan_tracks
 from .util import (
     artifact,
     command,
@@ -87,14 +88,40 @@ def stamp(seconds):
 
 
 class Pipeline:
-    def __init__(self, config: Config, provider: GenerationProvider | None = None):
+    def __init__(self, config: Config, provider: GenerationProvider | None = None,
+                 *, music_provider: GenerationProvider | None = None):
         self.config = config
         self.provider = provider or DummyProvider()
+        self.music_provider = music_provider or DummyProvider()
         self.dirs = {}
+
+    def _prepare(self):
+        descriptors = {}
+        for role, provider in (("text_image", self.provider), ("music", self.music_provider)):
+            caps = provider.capabilities()
+            rights = provider.get_rights_evidence()
+            if (caps.get("network_required") is not False or rights.get("status") != "blocked"
+                    or rights.get("intended_for_testing_only") is not True):
+                raise FactoryError("Only offline test-only providers are enabled")
+            descriptors[role] = {
+                "adapter": type(provider).__module__ + "." + type(provider).__qualname__,
+                "capabilities": caps,
+                "rights": rights,
+            }
+        caps = descriptors["music"]["capabilities"]
+        cfg = self.config
+        self.plan = plan_tracks(cfg.duration_seconds, caps.get("max_duration_seconds"),
+                                min_tracks=cfg.min_track_count,
+                                min_duration_seconds=caps.get("min_duration_seconds"),
+                                crossfade_seconds=cfg.crossfade_seconds,
+                                sample_rate=cfg.sample_rate)
+        self.snapshot = {**cfg.snapshot(), "providers": descriptors, "track_plan": self.plan}
+        scan_secrets(self.snapshot)
 
     def execute(self, *, run_id=None, resume=False, fail_stage=None):
         run_id = run_id or uuid.uuid4().hex
         validate_run_id(run_id)
+        self._prepare()
         root = self.config.data_dir / "runs" / run_id
         if resume and not root.is_dir():
             raise FactoryError("Cannot resume missing run")
@@ -119,7 +146,7 @@ class Pipeline:
             m = self.manifest
             if m["implementation_sha256"] != implementation_hash():
                 raise FactoryError("Implementation changed; create a new run")
-            if m["config_hash"] != object_hash(self.config.snapshot()):
+            if m["config_hash"] != object_hash(self.snapshot):
                 raise FactoryError("Config changed; create a new run")
             verify_artifacts(root, m["artifacts"])
             if m["status"] == "ready_for_review":
@@ -133,8 +160,8 @@ class Pipeline:
                 "created_at": now(),
                 "updated_at": now(),
                 "seed": self.config.seed,
-                "config_hash": object_hash(self.config.snapshot()),
-                "config": self.config.snapshot(),
+                "config_hash": object_hash(self.snapshot),
+                "config": self.snapshot,
                 "implementation_sha256": implementation_hash(),
                 "stages": [],
                 "artifacts": [],
@@ -253,7 +280,8 @@ class Pipeline:
         print(json.dumps(event), flush=True)
 
     def _generate(self, kind, output, *, slot=0, duration=0):
-        response = self.provider.generate(
+        provider = self.music_provider if kind == "audio" else self.provider
+        response = provider.generate(
             GenerationRequest(kind, self.config.seed, PROMPTS[kind], duration, slot), output
         )
         response["source_path"] = str(output.relative_to(self.root))
@@ -265,28 +293,24 @@ class Pipeline:
     def _stage(self, name, directory, inject_failure=False):
         cfg = self.config
         if name == "initialize":
-            write_json(directory / "config.json", cfg.snapshot())
+            write_json(directory / "config.json", self.snapshot)
+            write_json(directory / "track-plan.json", self.plan)
             write_json(directory / "code.json", {"schema_version": "1.0.0", **code_info()})
         elif name == "concept":
             self._generate("text", directory / "concept.json")
         elif name == "music_generate":
-            # Sample-rounded lengths are used both for rendering and chapter timestamps.
-            fade = 2.0
-            frames = round(
-                (cfg.duration_seconds + fade * (cfg.track_count - 1))
-                / cfg.track_count
-                * cfg.sample_rate
-            )
-            duration = frames / cfg.sample_rate
+            fade = self.plan["crossfade_frames"] / cfg.sample_rate
             tracks = []
-            for i in range(cfg.track_count):
+            for planned in self.plan["tracks"]:
+                i = planned["slot"]
+                duration = planned["frames"] / cfg.sample_rate
                 path = directory / f"track-{i + 1:02}.wav"
                 self._generate("audio", path, slot=i, duration=duration)
                 tracks.append(
                     {
                         "asset_id": path.stem,
                         "path": str(path.relative_to(self.root)),
-                        "start_seconds": round(i * (duration - fade), 6),
+                        "start_seconds": round(planned["start_frame"] / cfg.sample_rate, 6),
                         "duration_seconds": duration,
                     }
                 )
@@ -319,11 +343,11 @@ class Pipeline:
                 reports,
                 directory / "master.wav",
                 cfg.duration_seconds,
-                2,
+                self._timeline()["crossfade_seconds"],
             )
             write_json(directory / "master-qc.json", report)
         elif name == "provenance_gate":
-            rights = self.provider.get_rights_evidence()
+            rights = self.music_provider.get_rights_evidence()
             if rights["status"] != "blocked" or rights.get("intended_for_testing_only") is not True:
                 raise FactoryError("Phase 1 requires blocked test-only rights")
             write_json(
@@ -517,4 +541,6 @@ def resume_config(config, run_id):
         seed=original["seed"],
         duration_seconds=original["duration_seconds"],
         timezone=original["timezone"],
+        min_track_count=original.get("min_track_count", 8),
+        crossfade_seconds=original.get("crossfade_seconds", 2.0),
     )

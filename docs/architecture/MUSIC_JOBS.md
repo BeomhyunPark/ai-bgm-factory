@@ -76,6 +76,7 @@ fixture는 `tests/fixtures/music_jobs/lifecycle.json`에 있다. 테스트는 so
 
 ## 다음 구현
 
-음악 provider 분리와 capability에 맞는 8~12트랙 길이 계획을 준비한다.
+음악 provider 분리와 capability에 맞는 8~12트랙 길이 계획은 pipeline에 구현했다.
+이 job runner와 실제 generation adapter의 bridge는 아직 연결하지 않았다.
 실제 HTTP adapter 연결 전 서비스·예산·권리 승인, 원본 응답 redaction과 evidence 저장,
 계정별 청구 대조, request timeout과 Retry-After를 완성해야 한다.

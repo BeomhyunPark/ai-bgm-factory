@@ -28,5 +28,7 @@ def offline(monkeypatch, tmp_path):
         "TIMEZONE",
         "APP_ENV",
         "DATA_DIR",
+        "MIN_TRACK_COUNT",
+        "CROSSFADE_SECONDS",
     ):
         monkeypatch.delenv(name, raising=False)

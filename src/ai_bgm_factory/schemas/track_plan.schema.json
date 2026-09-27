@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-bgm-factory:track_plan:1.0.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "sample_rate", "target_frames", "crossfade_frames",
+    "max_source_frames", "min_source_frames", "tracks"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "sample_rate": {"type": "integer", "minimum": 1},
+    "target_frames": {"type": "integer", "minimum": 1},
+    "crossfade_frames": {"type": "integer", "minimum": 1},
+    "max_source_frames": {"type": "integer", "minimum": 1},
+    "min_source_frames": {"type": "integer", "minimum": 1},
+    "tracks": {
+      "type": "array", "minItems": 8, "maxItems": 12,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["slot", "frames", "start_frame"],
+        "properties": {
+          "slot": {"type": "integer", "minimum": 0, "maximum": 11},
+          "frames": {"type": "integer", "minimum": 1},
+          "start_frame": {"type": "integer", "minimum": 0}
+        }
+      }
+    }
+  }
+}
