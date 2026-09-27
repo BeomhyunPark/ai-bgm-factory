@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-bgm-factory:music_http_evidence:1.0.0",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "correlation_id", "adapter", "model", "model_version",
+    "operation", "received_at", "http_status", "response_sha256", "response_bytes",
+    "retry_after_seconds", "body_retained", "rights_status", "intended_for_testing_only"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "correlation_id": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "adapter": {"const": "stable-audio-http-fixture-v1"},
+    "model": {"const": "stable-audio-3"},
+    "model_version": {"const": "unknown"},
+    "operation": {"enum": ["submit", "poll"]},
+    "received_at": {"type": "string", "format": "date-time"},
+    "http_status": {"type": ["integer", "null"], "minimum": 100, "maximum": 599},
+    "response_sha256": {"type": ["string", "null"], "pattern": "^[a-f0-9]{64}$"},
+    "response_bytes": {"type": ["integer", "null"], "minimum": 0},
+    "retry_after_seconds": {"type": ["number", "null"], "minimum": 0},
+    "body_retained": {"const": false},
+    "rights_status": {"const": "blocked"},
+    "intended_for_testing_only": {"const": true}
+  }
+}

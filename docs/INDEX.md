@@ -13,6 +13,7 @@
 - [데이터 계약](architecture/DATA_CONTRACTS.md): manifest, metadata, provenance schema 초안
 - [Provider adapter](architecture/PROVIDER_ADAPTERS.md): 외부 생성 서비스 교체 규칙
 - [오프라인 음악 job 계약](architecture/MUSIC_JOBS.md): fake adapter, 재개, 비용 예약
+- [음악 HTTP 계약](architecture/MUSIC_HTTP.md): 응답 fixture, Retry-After, evidence
 
 ## 3. 정책
 

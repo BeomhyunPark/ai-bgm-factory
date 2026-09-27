@@ -31,7 +31,8 @@ submit은 한 번만 호출하고 모든 제출 예외를 결과 불명으로 �
 
 실험 runner의 시간 제한은 **조회 사이의 대기와 다음 조회 시작**을 제한한다.
 진행 중인 Python 호출을 강제로 중단하지 않는다. 실제 HTTP adapter에는 별도의 요청 timeout과
-서버 Retry-After 처리, 원격 idempotency capability 검증이 필요하다.
+원격 idempotency capability 검증이 필요하다. Retry-After 전달·대기 시각 보존은
+[HTTP fixture 계약](MUSIC_HTTP.md)에 구현했다. 실제 HTTP client의 timeout 강제는 후속 작업이다.
 
 ## 비용과 동시 실행
 
@@ -47,7 +48,8 @@ submit은 한 번만 호출하고 모든 제출 예외를 결과 불명으로 �
 
 ## 저장 계약
 
-전용 `jobs.db`의 `PRAGMA user_version=1`을 사용하며 Phase 1의 `app.db`와 분리한다.
+전용 `jobs.db`의 `PRAGMA user_version=2`를 사용하며 Phase 1의 `app.db`와 분리한다.
+버전 1에서 요청·비용을 보존하고 Retry-After의 not_before 열을 추가한다.
 알 수 없는 ledger 버전은 변경하지 않고 거부한다. jobs는 입력 원문 대신 identity hash,
 run ID, 요청 ID, job ID, 예약일, 금액과 상태를 보관한다.
 `events`에는 run/request ID, stage(reserve/submit/poll), stage별 event 순번인 attempt,
@@ -77,6 +79,6 @@ fixture는 `tests/fixtures/music_jobs/lifecycle.json`에 있다. 테스트는 so
 ## 다음 구현
 
 음악 provider 분리와 capability에 맞는 8~12트랙 길이 계획은 pipeline에 구현했다.
-이 job runner와 실제 generation adapter의 bridge는 아직 연결하지 않았다.
+이 job runner에 HTTP fixture adapter를 연결했다. 실제 generation adapter는 아직 없다.
 실제 HTTP adapter 연결 전 서비스·예산·권리 승인, 원본 응답 redaction과 evidence 저장,
-계정별 청구 대조, request timeout과 Retry-After를 완성해야 한다.
+계정별 청구 대조와 live request timeout을 완성해야 한다.
