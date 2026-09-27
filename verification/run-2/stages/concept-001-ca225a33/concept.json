@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "concept_id": "dummy-42",
+  "audience": "developers",
+  "use_case": "night coding",
+  "mood": "reflective",
+  "bpm_range": [
+    72,
+    84
+  ],
+  "genre": "algorithmic ambient test fixture",
+  "visual_brief": "abstract night window",
+  "seed": 42,
+  "novelty_anchors": [
+    "test signal only; originality not evaluated"
+  ],
+  "track_names": [
+    "First Light",
+    "Quiet Terminal",
+    "Open Window",
+    "Slow Current",
+    "Small Orbit",
+    "Soft Landing",
+    "Blue Hour",
+    "Last Commit"
+  ],
+  "intended_for_testing_only": true
+}

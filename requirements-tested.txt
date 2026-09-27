@@ -1,0 +1,7 @@
+# Direct dependencies actually used for Linux acceptance on 2026-09-27.
+# Install with: python -m pip install -r requirements-tested.txt
+numpy==2.3.5
+Pillow==12.3.0
+jsonschema==4.26.0
+pytest==9.1.1
+ruff==0.16.9

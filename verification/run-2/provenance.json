@@ -1,0 +1,363 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "90cd5a969d8840b8a5318ff7cde0ec9c",
+  "created_at": "2026-09-27T13:59:33.125770+00:00",
+  "code": {
+    "schema_version": "1.0.0",
+    "git_commit": null,
+    "dirty": null,
+    "pipeline_version": "0.1.0",
+    "implementation_sha256": "c42933780029d7c2adb4c033297b20cf1c3e5f69360d4c628a30d521e799f14e"
+  },
+  "inputs": {
+    "config_hash": "4cb84e4df03fb859f5f2f72a9199c43d1d7e04f496fe226e260f4c22e273cce8",
+    "concept_hash": "d5cc7e23171b348aeb73d15bc9f6d6d27323657bf6518cb81431110d5fe5bf90",
+    "prompt_template_versions": {
+      "text": "1.0.0",
+      "audio": "1.0.0",
+      "image": "1.0.0"
+    }
+  },
+  "assets": [
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "concept",
+      "kind": "text",
+      "provider": "dummy",
+      "model": "local-algorithmic-fixture",
+      "model_version": "1.0.0",
+      "request_id": "8152f2ebb42a365818ebd93c",
+      "prompt": "Local test brief: quiet night coding; instrumental only; original fixture.",
+      "negative_prompt": "vocals, speech, artist imitation",
+      "seed": 42,
+      "generated_at": "2026-09-27T13:53:39.835195+00:00",
+      "source_sha256": "d5cc7e23171b348aeb73d15bc9f6d6d27323657bf6518cb81431110d5fe5bf90",
+      "terms_url": null,
+      "usage": {
+        "cost_usd": 0,
+        "network_requests": 0
+      },
+      "intended_for_testing_only": true,
+      "source_path": "stages/concept-001-ca225a33/concept.json",
+      "raw_response_path": "stages/concept-001-ca225a33/concept.response.json",
+      "raw_response_sha256": "d549ce716b8607bf304a6e75e3bc4273d7adf7ca8c35534f82b923edb5905a15",
+      "qc_report_path": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "track-01",
+      "kind": "audio",
+      "provider": "dummy",
+      "model": "local-algorithmic-fixture",
+      "model_version": "1.0.0",
+      "request_id": "460bd3cdc8639ccbcf351cd2",
+      "prompt": "Algorithmic test signal: warm sine pad and gentle plucks; instrumental only.",
+      "negative_prompt": "vocals, speech, artist imitation",
+      "seed": 42,
+      "generated_at": "2026-09-27T13:53:42.261861+00:00",
+      "source_sha256": "79acd25e4f3318954fbcc5f9dfbaaac8b9738b2636c0f032570add0db32aa58f",
+      "terms_url": null,
+      "usage": {
+        "cost_usd": 0,
+        "network_requests": 0
+      },
+      "intended_for_testing_only": true,
+      "source_path": "stages/music_generate-001-2e8942de/track-01.wav",
+      "raw_response_path": "stages/music_generate-001-2e8942de/track-01.response.json",
+      "raw_response_sha256": "44e5775a954dd3dccc36b9cce3c4d988476d2a2896dcc91ab44bc2f23ee2728d",
+      "qc_report_path": "stages/audio_qc-001-ffd7f8e8/track-01.json"
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "track-02",
+      "kind": "audio",
+      "provider": "dummy",
+      "model": "local-algorithmic-fixture",
+      "model_version": "1.0.0",
+      "request_id": "e365b88aa76a1c8eb10987cf",
+      "prompt": "Algorithmic test signal: warm sine pad and gentle plucks; instrumental only.",
+      "negative_prompt": "vocals, speech, artist imitation",
+      "seed": 42,
+      "generated_at": "2026-09-27T13:53:44.663005+00:00",
+      "source_sha256": "60d681e41a04893f4588d348f501a893f7229fa8d0a78040875723ff57ec59c3",
+      "terms_url": null,
+      "usage": {
+        "cost_usd": 0,
+        "network_requests": 0
+      },
+      "intended_for_testing_only": true,
+      "source_path": "stages/music_generate-001-2e8942de/track-02.wav",
+      "raw_response_path": "stages/music_generate-001-2e8942de/track-02.response.json",
+      "raw_response_sha256": "06c09be6caeeb13d5f11b8896cf3ffec494ffe0ea581818499aded906f82bc1f",
+      "qc_report_path": "stages/audio_qc-001-ffd7f8e8/track-02.json"
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "track-03",
+      "kind": "audio",
+      "provider": "dummy",
+      "model": "local-algorithmic-fixture",
+      "model_version": "1.0.0",
+      "request_id": "9916ae269b073d623ab9bf8a",
+      "prompt": "Algorithmic test signal: warm sine pad and gentle plucks; instrumental only.",
+      "negative_prompt": "vocals, speech, artist imitation",
+      "seed": 42,
+      "generated_at": "2026-09-27T13:53:47.076091+00:00",
+      "source_sha256": "2fbeb1e4b9255bc6af75cfe37ececc4104609704636548059f1d69ad8d1a1bf0",
+      "terms_url": null,
+      "usage": {
+        "cost_usd": 0,
+        "network_requests": 0
+      },
+      "intended_for_testing_only": true,
+      "source_path": "stages/music_generate-001-2e8942de/track-03.wav",
+      "raw_response_path": "stages/music_generate-001-2e8942de/track-03.response.json",
+      "raw_response_sha256": "dcea2580f5432e2318097a3b72798b25cbfd21153de088bba7aff470a28bd3c6",
+      "qc_report_path": "stages/audio_qc-001-ffd7f8e8/track-03.json"
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "track-04",
+      "kind": "audio",
+      "provider": "dummy",
+      "model": "local-algorithmic-fixture",
+      "model_version": "1.0.0",
+      "request_id": "fa72503b4f122e8e66c30482",
+      "prompt": "Algorithmic test signal: warm sine pad and gentle plucks; instrumental only.",
+      "negative_prompt": "vocals, speech, artist imitation",
+      "seed": 42,
+      "generated_at": "2026-09-27T13:53:49.541521+00:00",
+      "source_sha256": "b1cc5e59e231f580fe1a7434745b588ac11dd48a078e4e9f438388c4ff68f823",
+      "terms_url": null,
+      "usage": {
+        "cost_usd": 0,
+        "network_requests": 0
+      },
+      "intended_for_testing_only": true,
+      "source_path": "stages/music_generate-001-2e8942de/track-04.wav",
+      "raw_response_path": "stages/music_generate-001-2e8942de/track-04.response.json",
+      "raw_response_sha256": "27efa69e1c71f62f85c5f7b74accd71a96e0095e6be3ed0323ec53399ef353c0",
+      "qc_report_path": "stages/audio_qc-001-ffd7f8e8/track-04.json"
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "track-05",
+      "kind": "audio",
+      "provider": "dummy",
+      "model": "local-algorithmic-fixture",
+      "model_version": "1.0.0",
+      "request_id": "fa6975ba58026fffcf2ca111",
+      "prompt": "Algorithmic test signal: warm sine pad and gentle plucks; instrumental only.",
+      "negative_prompt": "vocals, speech, artist imitation",
+      "seed": 42,
+      "generated_at": "2026-09-27T13:53:51.966772+00:00",
+      "source_sha256": "0e214f52f6c47c96ead701600ad05c3be94d00bc6733a53d6888b5fc65d67091",
+      "terms_url": null,
+      "usage": {
+        "cost_usd": 0,
+        "network_requests": 0
+      },
+      "intended_for_testing_only": true,
+      "source_path": "stages/music_generate-001-2e8942de/track-05.wav",
+      "raw_response_path": "stages/music_generate-001-2e8942de/track-05.response.json",
+      "raw_response_sha256": "aceffb9609ade11c494cbf658c82f49487dad12089aab1169af9a459885a7943",
+      "qc_report_path": "stages/audio_qc-001-ffd7f8e8/track-05.json"
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "track-06",
+      "kind": "audio",
+      "provider": "dummy",
+      "model": "local-algorithmic-fixture",
+      "model_version": "1.0.0",
+      "request_id": "bed5fa921e74bb0f78ccc9f7",
+      "prompt": "Algorithmic test signal: warm sine pad and gentle plucks; instrumental only.",
+      "negative_prompt": "vocals, speech, artist imitation",
+      "seed": 42,
+      "generated_at": "2026-09-27T13:53:54.340626+00:00",
+      "source_sha256": "6dfacdd836d7bcf968eb8df2dbe074b8cae9a0d1608d9865f44d520f6c0bf21f",
+      "terms_url": null,
+      "usage": {
+        "cost_usd": 0,
+        "network_requests": 0
+      },
+      "intended_for_testing_only": true,
+      "source_path": "stages/music_generate-001-2e8942de/track-06.wav",
+      "raw_response_path": "stages/music_generate-001-2e8942de/track-06.response.json",
+      "raw_response_sha256": "08ed57d553b1be42e67aa12ab5baabd19eeeda17b567f138a494b8eff3f039a2",
+      "qc_report_path": "stages/audio_qc-001-ffd7f8e8/track-06.json"
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "track-07",
+      "kind": "audio",
+      "provider": "dummy",
+      "model": "local-algorithmic-fixture",
+      "model_version": "1.0.0",
+      "request_id": "46a0dfddcd89caaf0d36f9e7",
+      "prompt": "Algorithmic test signal: warm sine pad and gentle plucks; instrumental only.",
+      "negative_prompt": "vocals, speech, artist imitation",
+      "seed": 42,
+      "generated_at": "2026-09-27T13:53:56.734535+00:00",
+      "source_sha256": "b1817cbed60a061f9dfe9e2b44d2f77d93d7fff73cadd3e55e766df3ff4e195d",
+      "terms_url": null,
+      "usage": {
+        "cost_usd": 0,
+        "network_requests": 0
+      },
+      "intended_for_testing_only": true,
+      "source_path": "stages/music_generate-001-2e8942de/track-07.wav",
+      "raw_response_path": "stages/music_generate-001-2e8942de/track-07.response.json",
+      "raw_response_sha256": "6c13c388ed1de12e3dc570f3560f83f41340a0fdd4e6e0a35b4295007c129cc3",
+      "qc_report_path": "stages/audio_qc-001-ffd7f8e8/track-07.json"
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "track-08",
+      "kind": "audio",
+      "provider": "dummy",
+      "model": "local-algorithmic-fixture",
+      "model_version": "1.0.0",
+      "request_id": "5963e0f5d4efb7b4036fb9b7",
+      "prompt": "Algorithmic test signal: warm sine pad and gentle plucks; instrumental only.",
+      "negative_prompt": "vocals, speech, artist imitation",
+      "seed": 42,
+      "generated_at": "2026-09-27T13:53:59.176968+00:00",
+      "source_sha256": "25b89834072e08d1b2ba4c97fa761972fffbe7cdd94732d09b8cb583dbf7d11b",
+      "terms_url": null,
+      "usage": {
+        "cost_usd": 0,
+        "network_requests": 0
+      },
+      "intended_for_testing_only": true,
+      "source_path": "stages/music_generate-001-2e8942de/track-08.wav",
+      "raw_response_path": "stages/music_generate-001-2e8942de/track-08.response.json",
+      "raw_response_sha256": "e20b39158ea36166c8c8fc0c6b72c7334f0a0f226d428584489197dc90e5cf1c",
+      "qc_report_path": "stages/audio_qc-001-ffd7f8e8/track-08.json"
+    },
+    {
+      "schema_version": "1.0.0",
+      "asset_id": "background",
+      "kind": "image",
+      "provider": "dummy",
+      "model": "local-algorithmic-fixture",
+      "model_version": "1.0.0",
+      "request_id": "e1c4c9100019e548f0672936",
+      "prompt": "Local geometric night-window test card; abstract, no people or branding.",
+      "negative_prompt": "vocals, speech, artist imitation",
+      "seed": 42,
+      "generated_at": "2026-09-27T13:57:49.276049+00:00",
+      "source_sha256": "d2361214db79663d30afe44871e6ab56861f12477972c4e7fc5a85735e394698",
+      "terms_url": null,
+      "usage": {
+        "cost_usd": 0,
+        "network_requests": 0
+      },
+      "intended_for_testing_only": true,
+      "source_path": "stages/visual_generate-001-f5c95c79/background.png",
+      "raw_response_path": "stages/visual_generate-001-f5c95c79/background.response.json",
+      "raw_response_sha256": "512d367850042eac1c8041b6c34111c760ffaf00cfd280ffbc56b0bea3e73859",
+      "qc_report_path": null
+    }
+  ],
+  "rights": {
+    "schema_version": "1.0.0",
+    "status": "blocked",
+    "intended_for_testing_only": true,
+    "intended_use": [
+      "local_pipeline_testing"
+    ],
+    "account_tier": "not_applicable",
+    "terms_url": null,
+    "terms_reviewed_at": null,
+    "terms_snapshot_sha256": null,
+    "evidence_paths": [],
+    "restrictions": [
+      "no_upload",
+      "no_commercial_use",
+      "no_content_id_registration"
+    ],
+    "decision": "local_test_only",
+    "upload_eligible": false
+  },
+  "transforms": [
+    {
+      "tool": "ffmpeg",
+      "version": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+      "operation": "normalize_crossfade",
+      "input_sha256": [
+        "79acd25e4f3318954fbcc5f9dfbaaac8b9738b2636c0f032570add0db32aa58f",
+        "60d681e41a04893f4588d348f501a893f7229fa8d0a78040875723ff57ec59c3",
+        "2fbeb1e4b9255bc6af75cfe37ececc4104609704636548059f1d69ad8d1a1bf0",
+        "b1cc5e59e231f580fe1a7434745b588ac11dd48a078e4e9f438388c4ff68f823",
+        "0e214f52f6c47c96ead701600ad05c3be94d00bc6733a53d6888b5fc65d67091",
+        "6dfacdd836d7bcf968eb8df2dbe074b8cae9a0d1608d9865f44d520f6c0bf21f",
+        "b1817cbed60a061f9dfe9e2b44d2f77d93d7fff73cadd3e55e766df3ff4e195d",
+        "25b89834072e08d1b2ba4c97fa761972fffbe7cdd94732d09b8cb583dbf7d11b"
+      ],
+      "output_sha256": "e601f81e6f2e10a9be65836358470816bcdb34b1e592c402058313aaac0fdbaf",
+      "parameters": {
+        "schema_version": "1.0.0",
+        "status": "passed",
+        "integrated_lufs": -14.0,
+        "true_peak_dbtp": -7.6,
+        "normalization": "two_pass_loudnorm",
+        "source_gain_target_rms_dbfs": -20,
+        "crossfade_seconds": 2,
+        "pre_measurements": {
+          "input_i": "-18.12",
+          "input_tp": "-11.72",
+          "input_lra": "0.30",
+          "input_thresh": "-28.12",
+          "output_i": "-13.90",
+          "output_tp": "-7.41",
+          "output_lra": "0.20",
+          "output_thresh": "-23.90",
+          "normalization_type": "dynamic",
+          "target_offset": "-0.10"
+        }
+      }
+    },
+    {
+      "tool": "ffmpeg",
+      "version": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers",
+      "operation": "static_video_render",
+      "input_sha256": [
+        "e601f81e6f2e10a9be65836358470816bcdb34b1e592c402058313aaac0fdbaf",
+        "d2361214db79663d30afe44871e6ab56861f12477972c4e7fc5a85735e394698"
+      ],
+      "output_sha256": "2ed59d9939b66d00e7e95c432e9f9c189905425a65a630421ca84777a761920d",
+      "parameters": {
+        "fps": 1,
+        "audio_bitrate": "96k",
+        "duration_seconds": 3600.0
+      }
+    },
+    {
+      "tool": "Pillow",
+      "version": "12.3.0",
+      "operation": "jpeg_thumbnail",
+      "input_sha256": [
+        "d2361214db79663d30afe44871e6ab56861f12477972c4e7fc5a85735e394698"
+      ],
+      "output_sha256": "d796eb6edbf26ab70310afafba05d8933ecb5cf023f3f98acf55b77b5bb32fc6",
+      "parameters": {
+        "quality": 92
+      }
+    }
+  ],
+  "final_artifacts": [
+    {
+      "path": "final.mp4",
+      "sha256": "2ed59d9939b66d00e7e95c432e9f9c189905425a65a630421ca84777a761920d"
+    },
+    {
+      "path": "thumbnail.jpg",
+      "sha256": "d796eb6edbf26ab70310afafba05d8933ecb5cf023f3f98acf55b77b5bb32fc6"
+    },
+    {
+      "path": "metadata.json",
+      "sha256": "bf32e252d67c3d6627d14a486ab3295e94a56e35b54ab3969e889adc7acfab4c"
+    }
+  ]
+}

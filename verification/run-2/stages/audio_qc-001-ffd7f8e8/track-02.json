@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "asset_id": "track-02",
+  "status": "passed",
+  "scope": "dummy_technical_only",
+  "measurements": {
+    "duration_seconds": 451.75,
+    "sample_peak_dbfs": -17.046292400039277,
+    "rms_dbfs": -25.30783166323917,
+    "max_silence_seconds": 0.0027083333333333334,
+    "vocal_probability": null,
+    "max_similarity": null
+  },
+  "thresholds_version": "dummy-1.0.0",
+  "not_evaluated": [
+    "vocal_classifier",
+    "spectral_anomaly",
+    "audio_similarity"
+  ],
+  "failures": []
+}

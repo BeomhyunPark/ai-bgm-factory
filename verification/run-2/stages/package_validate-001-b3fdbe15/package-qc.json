@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "status": "passed",
+  "scope": "local_test_only",
+  "human_review": "pending",
+  "production_qc": "not_implemented",
+  "upload_eligible": false,
+  "audio": {
+    "schema_version": "1.0.0",
+    "status": "passed",
+    "integrated_lufs": -14.0,
+    "true_peak_dbtp": -7.6,
+    "normalization": "two_pass_loudnorm",
+    "source_gain_target_rms_dbfs": -20,
+    "crossfade_seconds": 2,
+    "pre_measurements": {
+      "input_i": "-18.12",
+      "input_tp": "-11.72",
+      "input_lra": "0.30",
+      "input_thresh": "-28.12",
+      "output_i": "-13.90",
+      "output_tp": "-7.41",
+      "output_lra": "0.20",
+      "output_thresh": "-23.90",
+      "normalization_type": "dynamic",
+      "target_offset": "-0.10"
+    }
+  },
+  "video": {
+    "schema_version": "1.0.0",
+    "status": "passed",
+    "duration_seconds": 3600.0,
+    "video_duration": 3600.0,
+    "audio_duration": 3600.0,
+    "av_delta_seconds": 0.0,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "width": 1280,
+    "height": 720,
+    "full_decode_passed": true
+  }
+}

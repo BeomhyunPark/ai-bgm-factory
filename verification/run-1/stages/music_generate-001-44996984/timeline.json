@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "tracks": [
+    {
+      "asset_id": "track-01",
+      "path": "stages/music_generate-001-44996984/track-01.wav",
+      "start_seconds": 0.0,
+      "duration_seconds": 451.75
+    },
+    {
+      "asset_id": "track-02",
+      "path": "stages/music_generate-001-44996984/track-02.wav",
+      "start_seconds": 449.75,
+      "duration_seconds": 451.75
+    },
+    {
+      "asset_id": "track-03",
+      "path": "stages/music_generate-001-44996984/track-03.wav",
+      "start_seconds": 899.5,
+      "duration_seconds": 451.75
+    },
+    {
+      "asset_id": "track-04",
+      "path": "stages/music_generate-001-44996984/track-04.wav",
+      "start_seconds": 1349.25,
+      "duration_seconds": 451.75
+    },
+    {
+      "asset_id": "track-05",
+      "path": "stages/music_generate-001-44996984/track-05.wav",
+      "start_seconds": 1799.0,
+      "duration_seconds": 451.75
+    },
+    {
+      "asset_id": "track-06",
+      "path": "stages/music_generate-001-44996984/track-06.wav",
+      "start_seconds": 2248.75,
+      "duration_seconds": 451.75
+    },
+    {
+      "asset_id": "track-07",
+      "path": "stages/music_generate-001-44996984/track-07.wav",
+      "start_seconds": 2698.5,
+      "duration_seconds": 451.75
+    },
+    {
+      "asset_id": "track-08",
+      "path": "stages/music_generate-001-44996984/track-08.wav",
+      "start_seconds": 3148.25,
+      "duration_seconds": 451.75
+    }
+  ],
+  "crossfade_seconds": 2.0,
+  "duration_seconds": 3600.0
+}

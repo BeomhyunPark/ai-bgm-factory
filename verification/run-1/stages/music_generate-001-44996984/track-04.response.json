@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "asset_id": "track-04",
+  "kind": "audio",
+  "provider": "dummy",
+  "model": "local-algorithmic-fixture",
+  "model_version": "1.0.0",
+  "request_id": "fa72503b4f122e8e66c30482",
+  "prompt": "Algorithmic test signal: warm sine pad and gentle plucks; instrumental only.",
+  "negative_prompt": "vocals, speech, artist imitation",
+  "seed": 42,
+  "generated_at": "2026-09-27T13:47:28.372532+00:00",
+  "source_sha256": "b1cc5e59e231f580fe1a7434745b588ac11dd48a078e4e9f438388c4ff68f823",
+  "terms_url": null,
+  "usage": {
+    "cost_usd": 0,
+    "network_requests": 0
+  },
+  "intended_for_testing_only": true,
+  "source_path": "stages/music_generate-001-44996984/track-04.wav",
+  "raw_response_path": "stages/music_generate-001-44996984/track-04.response.json"
+}

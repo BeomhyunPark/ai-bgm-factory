@@ -1,0 +1,406 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "4166dec0f4cf4fc99198be7dab016e5b",
+  "status": "ready_for_review",
+  "created_at": "2026-09-27T13:59:57.689814+00:00",
+  "updated_at": "2026-09-27T14:05:56.309059+00:00",
+  "seed": 42,
+  "config_hash": "4cb84e4df03fb859f5f2f72a9199c43d1d7e04f496fe226e260f4c22e273cce8",
+  "config": {
+    "schema_version": "1.0.0",
+    "duration_seconds": 3600.0,
+    "seed": 42,
+    "timezone": "Asia/Seoul",
+    "track_count": 8,
+    "sample_rate": 48000,
+    "width": 1280,
+    "height": 720,
+    "fps": 1,
+    "provider": "dummy",
+    "privacy_status": "private",
+    "intended_for_testing_only": true,
+    "human_approval_required": true
+  },
+  "implementation_sha256": "c42933780029d7c2adb4c033297b20cf1c3e5f69360d4c628a30d521e799f14e",
+  "stages": [
+    {
+      "name": "initialize",
+      "status": "succeeded",
+      "attempt": 1,
+      "started_at": "2026-09-27T13:59:57.692154+00:00",
+      "input_hash": "e8b7bd1a3efdd57820127ec95310893047e84c88cd4afa916c13eeebd713f12e",
+      "directory": "stages/initialize-001-c7be6e45",
+      "finished_at": "2026-09-27T13:59:57.695338+00:00",
+      "duration_ms": 2.65
+    },
+    {
+      "name": "concept",
+      "status": "succeeded",
+      "attempt": 1,
+      "started_at": "2026-09-27T13:59:57.696039+00:00",
+      "input_hash": "4a4922a7d5cca392a493caf6aa5be6263cde977aed4cf66667ef8834f3fe5566",
+      "directory": "stages/concept-001-2132e259",
+      "finished_at": "2026-09-27T13:59:57.697375+00:00",
+      "duration_ms": 0.72
+    },
+    {
+      "name": "music_generate",
+      "status": "succeeded",
+      "attempt": 1,
+      "started_at": "2026-09-27T13:59:57.698256+00:00",
+      "input_hash": "88ac883e999d5eaaed9297115f38996be48bf7d4e8f13f15721aededfad7d277",
+      "directory": "stages/music_generate-001-85e2c33a",
+      "finished_at": "2026-09-27T14:00:17.919052+00:00",
+      "duration_ms": 20220.09
+    },
+    {
+      "name": "audio_qc",
+      "status": "succeeded",
+      "attempt": 1,
+      "started_at": "2026-09-27T14:00:17.920825+00:00",
+      "input_hash": "169d145bd5f0bb55a787fc26c086638c4ec6ea70dff48f49078a48de6c142ea8",
+      "directory": "stages/audio_qc-001-d61c8a40",
+      "finished_at": "2026-09-27T14:00:28.362491+00:00",
+      "duration_ms": 10440.25
+    },
+    {
+      "name": "audio_master",
+      "status": "succeeded",
+      "attempt": 1,
+      "started_at": "2026-09-27T14:00:28.364517+00:00",
+      "input_hash": "f013ce1c4a284f8a7c9cf7f2ed5e206d475c72dd044ac4b7d64f1d44232c44d7",
+      "directory": "stages/audio_master-001-7bdfe152",
+      "finished_at": "2026-09-27T14:04:08.267019+00:00",
+      "duration_ms": 219900.85
+    },
+    {
+      "name": "provenance_gate",
+      "status": "succeeded",
+      "attempt": 1,
+      "started_at": "2026-09-27T14:04:08.271935+00:00",
+      "input_hash": "ed43d4696e31445b1f6ebdf0569e0da1bf31a483b0bfb97040ce55c3342a0105",
+      "directory": "stages/provenance_gate-001-3b6cdbd4",
+      "finished_at": "2026-09-27T14:04:08.274497+00:00",
+      "duration_ms": 0.33
+    },
+    {
+      "name": "visual_generate",
+      "status": "succeeded",
+      "attempt": 1,
+      "started_at": "2026-09-27T14:04:08.276711+00:00",
+      "input_hash": "666b54a8658f9f783cfda0fd63f4b255f118cd95fc9b231f48ab58763f12a8f6",
+      "directory": "stages/visual_generate-001-c3fb3c07",
+      "finished_at": "2026-09-27T14:04:08.317735+00:00",
+      "duration_ms": 39.03
+    },
+    {
+      "name": "render",
+      "status": "succeeded",
+      "attempt": 1,
+      "started_at": "2026-09-27T14:04:08.320320+00:00",
+      "input_hash": "ebd64a3bc2bbafea9f21341c60eba7db5da8fb607c42f60214879612da69f8db",
+      "directory": "stages/render-001-e725efd1",
+      "finished_at": "2026-09-27T14:05:52.796535+00:00",
+      "duration_ms": 104473.87
+    },
+    {
+      "name": "metadata",
+      "status": "succeeded",
+      "attempt": 1,
+      "started_at": "2026-09-27T14:05:52.800387+00:00",
+      "input_hash": "7dd365dd4b83c80a01e8e92ca579217d4d802b832be7ac343d9b946b6db39b13",
+      "directory": "stages/metadata-001-ed082930",
+      "finished_at": "2026-09-27T14:05:52.804205+00:00",
+      "duration_ms": 1.34
+    },
+    {
+      "name": "package_validate",
+      "status": "succeeded",
+      "attempt": 1,
+      "started_at": "2026-09-27T14:05:52.806589+00:00",
+      "input_hash": "409864691046812595eadf866884ddf848d68b453f8950632149f83a3912be0d",
+      "directory": "stages/package_validate-001-466eeb96",
+      "finished_at": "2026-09-27T14:05:56.306170+00:00",
+      "duration_ms": 3496.92
+    }
+  ],
+  "artifacts": [
+    {
+      "role": "intermediate",
+      "path": "stages/initialize-001-c7be6e45/code.json",
+      "sha256": "c21448e50c0e901244e0620698c64ae09ec803e3120833d820c240be5cca8317",
+      "bytes": 197
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/initialize-001-c7be6e45/config.json",
+      "sha256": "441c0a1461f7a025a6630343e2ddcb4808ab93790d5c779e1928535b39be181d",
+      "bytes": 320
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/concept-001-2132e259/concept.json",
+      "sha256": "d5cc7e23171b348aeb73d15bc9f6d6d27323657bf6518cb81431110d5fe5bf90",
+      "bytes": 576
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/concept-001-2132e259/concept.response.json",
+      "sha256": "f72244c2c4494e8a26f302bed5eca76571717bf07d9cc57053a7982831936710",
+      "bytes": 770
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/timeline.json",
+      "sha256": "bf42960f139ecc80abacee2730e6a9d462fbcb7fe7415da8ca9c7819481b17b9",
+      "bytes": 1483
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-01.response.json",
+      "sha256": "eb9b1628d916cc6cb3d9f3cc4528ab24a2bb99403194613d65806edac5c0e39e",
+      "bytes": 789
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-01.wav",
+      "sha256": "79acd25e4f3318954fbcc5f9dfbaaac8b9738b2636c0f032570add0db32aa58f",
+      "bytes": 86736044
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-02.response.json",
+      "sha256": "2dee304950fcc411df29cc8f7d5b767a891300b7436044c01cc0e91bd107a71f",
+      "bytes": 789
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-02.wav",
+      "sha256": "60d681e41a04893f4588d348f501a893f7229fa8d0a78040875723ff57ec59c3",
+      "bytes": 86736044
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-03.response.json",
+      "sha256": "79c061972b538c7c5eba313ddf8d33061d4620db507de8001b28cb52ca98880d",
+      "bytes": 789
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-03.wav",
+      "sha256": "2fbeb1e4b9255bc6af75cfe37ececc4104609704636548059f1d69ad8d1a1bf0",
+      "bytes": 86736044
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-04.response.json",
+      "sha256": "13111fc7998118af678cba680f042a1658682c0c4b28aab4422e765cd1cbe589",
+      "bytes": 789
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-04.wav",
+      "sha256": "b1cc5e59e231f580fe1a7434745b588ac11dd48a078e4e9f438388c4ff68f823",
+      "bytes": 86736044
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-05.response.json",
+      "sha256": "11ca6ef4981c993309041819e2152c065b3b1b7b10d39c5d35084c695c7e3410",
+      "bytes": 789
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-05.wav",
+      "sha256": "0e214f52f6c47c96ead701600ad05c3be94d00bc6733a53d6888b5fc65d67091",
+      "bytes": 86736044
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-06.response.json",
+      "sha256": "136b166598f97c4e20c559ad76be9b15f2b1afb055957e17f03302d0917020c0",
+      "bytes": 789
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-06.wav",
+      "sha256": "6dfacdd836d7bcf968eb8df2dbe074b8cae9a0d1608d9865f44d520f6c0bf21f",
+      "bytes": 86736044
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-07.response.json",
+      "sha256": "7d3740732ff7b9825534c8cc50a77a025030d3cf6378102caf274c1af340ace2",
+      "bytes": 789
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-07.wav",
+      "sha256": "b1817cbed60a061f9dfe9e2b44d2f77d93d7fff73cadd3e55e766df3ff4e195d",
+      "bytes": 86736044
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-08.response.json",
+      "sha256": "09cbd2f9a2df610efffeb16b5dc6ef0d8b699274ebcd8dafde101ecf41cc1bde",
+      "bytes": 789
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/music_generate-001-85e2c33a/track-08.wav",
+      "sha256": "25b89834072e08d1b2ba4c97fa761972fffbe7cdd94732d09b8cb583dbf7d11b",
+      "bytes": 86736044
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/audio_qc-001-d61c8a40/track-01.json",
+      "sha256": "80a5e55b5c6b8642cfc59998809dc18bddfe6ce7ec6d8b51590e4016d7304763",
+      "bytes": 515
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/audio_qc-001-d61c8a40/track-02.json",
+      "sha256": "d7b86fa2c8518170a9ce0b81a65076f2488c713d88a4b59bf738b1902d3e7734",
+      "bytes": 515
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/audio_qc-001-d61c8a40/track-03.json",
+      "sha256": "ef5ebebb9ba9578086fd668bda6fdb6f75cb1fa88193b90eef2c899d63c3ec09",
+      "bytes": 515
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/audio_qc-001-d61c8a40/track-04.json",
+      "sha256": "eed63d0615c14f80719b5f546b74e7103c26fd2d6c736caff58f45f9bd3bc22f",
+      "bytes": 515
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/audio_qc-001-d61c8a40/track-05.json",
+      "sha256": "4716b55bb59244e597354026fd05b27dd2be797d6875d90e2f885f898774dcae",
+      "bytes": 515
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/audio_qc-001-d61c8a40/track-06.json",
+      "sha256": "d5615cec2973cc8fd7f464128317b24413b1eec92f74e72b7d8e84f057d64286",
+      "bytes": 516
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/audio_qc-001-d61c8a40/track-07.json",
+      "sha256": "e198ba525a2774a6d5feba67fe942e94629c43a16c3c13e3bec0a504227c5798",
+      "bytes": 515
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/audio_qc-001-d61c8a40/track-08.json",
+      "sha256": "c727010caf311a23c04326e3eb2208f14704bf2d86c482a6ef7ef383e0229d76",
+      "bytes": 514
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/audio_master-001-7bdfe152/master-qc.json",
+      "sha256": "76fb93487da9fb61798dc5bbd7414b2a74f4016d9819f1a1ed9a26eb88e6674a",
+      "bytes": 522
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/audio_master-001-7bdfe152/master.wav",
+      "sha256": "e601f81e6f2e10a9be65836358470816bcdb34b1e592c402058313aaac0fdbaf",
+      "bytes": 691200078
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/audio_master-001-7bdfe152/premaster.wav",
+      "sha256": "894f38c8c0f7c5ac028db885f8e2219a85257029a3727ab064af970e754eed24",
+      "bytes": 691200078
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/provenance_gate-001-3b6cdbd4/rights.json",
+      "sha256": "e0f76ae02e77ea74d73dbc780f86e6a466317e7b00d7d2a35015789f7dc4e9d2",
+      "bytes": 450
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/visual_generate-001-c3fb3c07/background.png",
+      "sha256": "d2361214db79663d30afe44871e6ab56861f12477972c4e7fc5a85735e394698",
+      "bytes": 20674
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/visual_generate-001-c3fb3c07/background.response.json",
+      "sha256": "811e55a4c14f6952edc99948a3dbc81920e3d81f2beb1948fbe40d2a1663eec9",
+      "bytes": 793
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/visual_generate-001-c3fb3c07/thumbnail.jpg",
+      "sha256": "d796eb6edbf26ab70310afafba05d8933ecb5cf023f3f98acf55b77b5bb32fc6",
+      "bytes": 38070
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/render-001-e725efd1/final.mp4",
+      "sha256": "2ed59d9939b66d00e7e95c432e9f9c189905425a65a630421ca84777a761920d",
+      "bytes": 45517992
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/render-001-e725efd1/video-qc.json",
+      "sha256": "0c7f8a3ffc5d0aeb59cf737d5838d0ced9410d9b44bc74c649c5ad1c416965ab",
+      "bytes": 280
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/metadata-001-ed082930/metadata.json",
+      "sha256": "bf32e252d67c3d6627d14a486ab3295e94a56e35b54ab3969e889adc7acfab4c",
+      "bytes": 1746
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/package_validate-001-466eeb96/package-qc.json",
+      "sha256": "7ccd35d788bc51915280471d7877fdcb24405ebce202a2203cc6d665e5afd536",
+      "bytes": 1069
+    },
+    {
+      "role": "intermediate",
+      "path": "stages/package_validate-001-466eeb96/provenance.json",
+      "sha256": "d8b11e61758c9c24d9c8e435c1511d1217156abd82e7d9a896e07d3db9693177",
+      "bytes": 14441
+    },
+    {
+      "role": "final_video",
+      "path": "final.mp4",
+      "sha256": "2ed59d9939b66d00e7e95c432e9f9c189905425a65a630421ca84777a761920d",
+      "bytes": 45517992
+    },
+    {
+      "role": "thumbnail",
+      "path": "thumbnail.jpg",
+      "sha256": "d796eb6edbf26ab70310afafba05d8933ecb5cf023f3f98acf55b77b5bb32fc6",
+      "bytes": 38070
+    },
+    {
+      "role": "metadata",
+      "path": "metadata.json",
+      "sha256": "bf32e252d67c3d6627d14a486ab3295e94a56e35b54ab3969e889adc7acfab4c",
+      "bytes": 1746
+    },
+    {
+      "role": "provenance",
+      "path": "provenance.json",
+      "sha256": "d8b11e61758c9c24d9c8e435c1511d1217156abd82e7d9a896e07d3db9693177",
+      "bytes": 14441
+    }
+  ],
+  "review_scope": "local_test_only",
+  "publication": {
+    "privacy_status": "private",
+    "approval_required": true,
+    "upload_eligible": false,
+    "rights_status": "blocked"
+  }
+}

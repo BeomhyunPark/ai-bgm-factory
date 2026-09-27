@@ -1,0 +1,290 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-bgm-factory:provenance:1.0.0",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "run_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "code": {
+      "type": "object",
+      "properties": {
+        "pipeline_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "implementation_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "pipeline_version",
+        "implementation_sha256"
+      ],
+      "additionalProperties": true
+    },
+    "inputs": {
+      "type": "object",
+      "properties": {
+        "config_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "concept_hash": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "prompt_template_versions": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "config_hash",
+        "concept_hash",
+        "prompt_template_versions"
+      ],
+      "additionalProperties": false
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "schema_version": {
+            "const": "1.0.0"
+          },
+          "asset_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "enum": [
+              "audio",
+              "image",
+              "text"
+            ]
+          },
+          "provider": {
+            "const": "dummy"
+          },
+          "model": {
+            "type": "string",
+            "minLength": 1
+          },
+          "model_version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "request_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "negative_prompt": {
+            "type": "string",
+            "minLength": 1
+          },
+          "seed": {
+            "type": "integer"
+          },
+          "generated_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "source_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "terms_url": {
+            "type": "null"
+          },
+          "usage": {
+            "type": "object",
+            "properties": {
+              "cost_usd": {
+                "const": 0
+              },
+              "network_requests": {
+                "const": 0
+              }
+            },
+            "required": [
+              "cost_usd",
+              "network_requests"
+            ],
+            "additionalProperties": false
+          },
+          "intended_for_testing_only": {
+            "const": true
+          },
+          "source_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "raw_response_path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "raw_response_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "qc_report_path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "schema_version",
+          "asset_id",
+          "kind",
+          "provider",
+          "model",
+          "model_version",
+          "request_id",
+          "prompt",
+          "negative_prompt",
+          "seed",
+          "generated_at",
+          "source_sha256",
+          "terms_url",
+          "usage",
+          "intended_for_testing_only",
+          "source_path",
+          "raw_response_path",
+          "raw_response_sha256",
+          "qc_report_path"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 10
+    },
+    "rights": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "const": "blocked"
+        },
+        "intended_for_testing_only": {
+          "const": true
+        },
+        "intended_use": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "restrictions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "status",
+        "intended_for_testing_only",
+        "intended_use",
+        "restrictions"
+      ],
+      "additionalProperties": true
+    },
+    "transforms": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "tool": {
+            "type": "string",
+            "minLength": 1
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1
+          },
+          "operation": {
+            "type": "string",
+            "minLength": 1
+          },
+          "input_sha256": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "minItems": 1
+          },
+          "output_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "parameters": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "tool",
+          "version",
+          "operation",
+          "input_sha256",
+          "output_sha256",
+          "parameters"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 3
+    },
+    "final_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 3
+    }
+  },
+  "required": [
+    "schema_version",
+    "run_id",
+    "created_at",
+    "code",
+    "inputs",
+    "assets",
+    "rights",
+    "transforms",
+    "final_artifacts"
+  ],
+  "additionalProperties": false
+}

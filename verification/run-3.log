@@ -1,0 +1,112 @@
+{
+  "schema_version": "1.0.0",
+  "status": "passed",
+  "checks": {
+    "python_3_12_plus": true,
+    "ffmpeg": true,
+    "ffprobe": true,
+    "libx264": true,
+    "aac": true,
+    "loudnorm": true,
+    "acrossfade": true,
+    "data_parent_writable": true,
+    "disk_space": true,
+    "credentials_required": false,
+    "external_services_enabled": false
+  },
+  "media_profile": "1280x720, 1 fps static test card; H.264/AAC"
+}
+All checks passed!
+Source secret scan passed
+{"schema_version": "1.0.0", "kernel_network_denied": true}
+...................{"error": "Command is not implemented in Phase 1; no external action performed"}
+.{"error": "Command is not implemented in Phase 1; no external action performed"}
+.{"error": "Command is not implemented in Phase 1; no external action performed"}
+.{"error": "Command is not implemented in Phase 1; no external action performed"}
+....................{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:43.407861+00:00", "run_id": "interrupted", "stage": "initialize", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:43.413633+00:00", "run_id": "interrupted", "stage": "initialize", "attempt": 1, "duration_ms": 5.21, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:43.414348+00:00", "run_id": "interrupted", "stage": "concept", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:43.415588+00:00", "run_id": "interrupted", "stage": "concept", "attempt": 1, "duration_ms": 0.59, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:43.416380+00:00", "run_id": "interrupted", "stage": "music_generate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:43.896031+00:00", "run_id": "interrupted", "stage": "music_generate", "attempt": 1, "duration_ms": 477.85, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:43.898453+00:00", "run_id": "interrupted", "stage": "audio_qc", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:44.137806+00:00", "run_id": "interrupted", "stage": "audio_qc", "attempt": 1, "duration_ms": 237.46, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:44.140016+00:00", "run_id": "interrupted", "stage": "audio_master", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:48.008246+00:00", "run_id": "interrupted", "stage": "audio_master", "attempt": 1, "duration_ms": 3865.51, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:48.010332+00:00", "run_id": "interrupted", "stage": "provenance_gate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:48.012665+00:00", "run_id": "interrupted", "stage": "provenance_gate", "attempt": 1, "duration_ms": 0.28, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:48.014827+00:00", "run_id": "interrupted", "stage": "visual_generate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:48.059397+00:00", "run_id": "interrupted", "stage": "visual_generate", "attempt": 1, "duration_ms": 42.28, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:48.061683+00:00", "run_id": "interrupted", "stage": "render", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:48.263706+00:00", "run_id": "interrupted", "stage": "render", "attempt": 1, "duration_ms": 199.55, "status": "failed", "reason": "Injected render interruption after partial MP4 creation"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:48.311580+00:00", "run_id": "interrupted", "stage": "render", "attempt": 2, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:50.315374+00:00", "run_id": "interrupted", "stage": "render", "attempt": 2, "duration_ms": 2000.99, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:50.317913+00:00", "run_id": "interrupted", "stage": "metadata", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:50.320964+00:00", "run_id": "interrupted", "stage": "metadata", "attempt": 1, "duration_ms": 0.77, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:50.323647+00:00", "run_id": "interrupted", "stage": "package_validate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:50.430902+00:00", "run_id": "interrupted", "stage": "package_validate", "attempt": 1, "duration_ms": 104.7, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:50.582620+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "initialize", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:50.586029+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "initialize", "attempt": 1, "duration_ms": 2.76, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:50.586784+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "concept", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:50.588127+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "concept", "attempt": 1, "duration_ms": 0.57, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:50.588944+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "music_generate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:51.046481+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "music_generate", "attempt": 1, "duration_ms": 456.0, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:51.048016+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "audio_qc", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:51.244489+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "audio_qc", "attempt": 1, "duration_ms": 194.45, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:51.246414+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "audio_master", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:55.265525+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "audio_master", "attempt": 1, "duration_ms": 4016.89, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:55.267923+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "provenance_gate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:55.270242+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "provenance_gate", "attempt": 1, "duration_ms": 0.36, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:55.272451+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "visual_generate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:55.305237+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "visual_generate", "attempt": 1, "duration_ms": 30.7, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:55.307878+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "render", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:57.329500+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "render", "attempt": 1, "duration_ms": 2019.28, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:57.332052+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "metadata", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:57.334963+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "metadata", "attempt": 1, "duration_ms": 0.69, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:57.337608+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "package_validate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:57.448876+00:00", "run_id": "dc3f9ec6b18e4c68ac3dbffb7bd55cbd", "stage": "package_validate", "attempt": 1, "duration_ms": 108.41, "status": "succeeded"}
+{"error": "Resume seed differs from original run"}
+{"schema_version": "1.0.0", "run_id": "interrupted", "status": "ready_for_review", "publication": {"privacy_status": "private", "approval_required": true, "upload_eligible": false, "rights_status": "blocked"}, "output": "/tmp/bgm-acceptance-final/test-3/test_e2e_failure_resume_immuta0/data/runs/interrupted"}
+.{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:57.692602+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "initialize", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:57.695889+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "initialize", "attempt": 1, "duration_ms": 2.65, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:57.696596+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "concept", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:57.697938+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "concept", "attempt": 1, "duration_ms": 0.72, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T13:59:57.698929+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "music_generate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:00:17.920583+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "music_generate", "attempt": 1, "duration_ms": 20220.09, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:00:17.922171+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "audio_qc", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:00:28.364295+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "audio_qc", "attempt": 1, "duration_ms": 10440.25, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:00:28.366186+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "audio_master", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:04:08.271271+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "audio_master", "attempt": 1, "duration_ms": 219900.85, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:04:08.274047+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "provenance_gate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:04:08.276471+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "provenance_gate", "attempt": 1, "duration_ms": 0.33, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:04:08.278630+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "visual_generate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:04:08.320090+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "visual_generate", "attempt": 1, "duration_ms": 39.03, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:04:08.322606+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "render", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:52.800007+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "render", "attempt": 1, "duration_ms": 104473.87, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:52.802770+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "metadata", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:52.806356+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "metadata", "attempt": 1, "duration_ms": 1.34, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:52.809187+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "package_validate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:56.308967+00:00", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "stage": "package_validate", "attempt": 1, "duration_ms": 3496.92, "status": "succeeded"}
+{"schema_version": "1.0.0", "run_id": "4166dec0f4cf4fc99198be7dab016e5b", "status": "ready_for_review", "publication": {"privacy_status": "private", "approval_required": true, "upload_eligible": false, "rights_status": "blocked"}, "output": "/tmp/bgm-acceptance-final/test-3/test_full_60_minute_default0/data/runs/4166dec0f4cf4fc99198be7dab016e5b"}
+.{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:58.298122+00:00", "run_id": "tampered-source", "stage": "initialize", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:58.301913+00:00", "run_id": "tampered-source", "stage": "initialize", "attempt": 1, "duration_ms": 3.14, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:58.302767+00:00", "run_id": "tampered-source", "stage": "concept", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:58.304272+00:00", "run_id": "tampered-source", "stage": "concept", "attempt": 1, "duration_ms": 0.78, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:58.305188+00:00", "run_id": "tampered-source", "stage": "music_generate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:58.841496+00:00", "run_id": "tampered-source", "stage": "music_generate", "attempt": 1, "duration_ms": 534.8, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:58.843220+00:00", "run_id": "tampered-source", "stage": "audio_qc", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:59.047880+00:00", "run_id": "tampered-source", "stage": "audio_qc", "attempt": 1, "duration_ms": 202.64, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:05:59.050470+00:00", "run_id": "tampered-source", "stage": "audio_master", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:06:03.189142+00:00", "run_id": "tampered-source", "stage": "audio_master", "attempt": 1, "duration_ms": 4136.38, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:06:03.191388+00:00", "run_id": "tampered-source", "stage": "provenance_gate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:06:03.193648+00:00", "run_id": "tampered-source", "stage": "provenance_gate", "attempt": 1, "duration_ms": 0.3, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:06:03.195829+00:00", "run_id": "tampered-source", "stage": "visual_generate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:06:03.230276+00:00", "run_id": "tampered-source", "stage": "visual_generate", "attempt": 1, "duration_ms": 32.28, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:06:03.232664+00:00", "run_id": "tampered-source", "stage": "render", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:06:05.322193+00:00", "run_id": "tampered-source", "stage": "render", "attempt": 1, "duration_ms": 2087.17, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:06:05.324626+00:00", "run_id": "tampered-source", "stage": "metadata", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:06:05.327666+00:00", "run_id": "tampered-source", "stage": "metadata", "attempt": 1, "duration_ms": 0.75, "status": "succeeded"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:06:05.330257+00:00", "run_id": "tampered-source", "stage": "package_validate", "attempt": 1, "duration_ms": 0, "status": "running"}
+{"schema_version": "1.0.0", "timestamp": "2026-09-27T14:06:05.334816+00:00", "run_id": "tampered-source", "stage": "package_validate", "attempt": 1, "duration_ms": 2.23, "status": "failed", "reason": "Artifact hash mismatch; preserving existing run"}
+.
+45 passed in 382.25s (0:06:22)

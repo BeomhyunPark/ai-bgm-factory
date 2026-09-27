@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "status": "blocked",
+  "intended_for_testing_only": true,
+  "intended_use": [
+    "local_pipeline_testing"
+  ],
+  "account_tier": "not_applicable",
+  "terms_url": null,
+  "terms_reviewed_at": null,
+  "terms_snapshot_sha256": null,
+  "evidence_paths": [],
+  "restrictions": [
+    "no_upload",
+    "no_commercial_use",
+    "no_content_id_registration"
+  ],
+  "decision": "local_test_only",
+  "upload_eligible": false
+}

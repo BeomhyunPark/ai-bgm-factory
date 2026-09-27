@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "title": "Night Work — Instrumental Pipeline Test",
+  "description": "Locally synthesized test audio and procedural graphics. Not for publication.\n\n00:00 First Light\n07:29 Quiet Terminal\n14:59 Open Window\n22:29 Slow Current\n29:59 Small Orbit\n37:28 Soft Landing\n44:58 Blue Hour\n52:28 Last Commit",
+  "tags": [
+    "instrumental",
+    "pipeline test"
+  ],
+  "category_id": "10",
+  "default_language": "en",
+  "privacy_status": "private",
+  "contains_synthetic_media": true,
+  "made_for_kids": false,
+  "chapters": [
+    {
+      "start_seconds": 0.0,
+      "timestamp": "00:00",
+      "title": "First Light"
+    },
+    {
+      "start_seconds": 449.75,
+      "timestamp": "07:29",
+      "title": "Quiet Terminal"
+    },
+    {
+      "start_seconds": 899.5,
+      "timestamp": "14:59",
+      "title": "Open Window"
+    },
+    {
+      "start_seconds": 1349.25,
+      "timestamp": "22:29",
+      "title": "Slow Current"
+    },
+    {
+      "start_seconds": 1799.0,
+      "timestamp": "29:59",
+      "title": "Small Orbit"
+    },
+    {
+      "start_seconds": 2248.75,
+      "timestamp": "37:28",
+      "title": "Soft Landing"
+    },
+    {
+      "start_seconds": 2698.5,
+      "timestamp": "44:58",
+      "title": "Blue Hour"
+    },
+    {
+      "start_seconds": 3148.25,
+      "timestamp": "52:28",
+      "title": "Last Commit"
+    }
+  ],
+  "disclosure_note": "Locally synthesized test audio and procedural graphics. Not for publication.",
+  "intended_for_testing_only": true,
+  "creative_distinctiveness": {
+    "concept_id": "dummy-42",
+    "novelty_anchors": [
+      "test signal only; originality not evaluated"
+    ],
+    "similarity_score": null,
+    "evaluation_status": "not_evaluated_test_fixture"
+  }
+}

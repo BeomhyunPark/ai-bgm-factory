@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:ai-bgm-factory:qc:1.0.0",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "asset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "passed",
+        "failed"
+      ]
+    },
+    "scope": {
+      "const": "dummy_technical_only"
+    },
+    "measurements": {
+      "type": "object",
+      "properties": {
+        "duration_seconds": {
+          "type": "number"
+        },
+        "sample_peak_dbfs": {
+          "type": "number"
+        },
+        "rms_dbfs": {
+          "type": "number"
+        },
+        "max_silence_seconds": {
+          "type": "number"
+        },
+        "vocal_probability": {
+          "type": "null"
+        },
+        "max_similarity": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "duration_seconds",
+        "sample_peak_dbfs",
+        "rms_dbfs",
+        "max_silence_seconds",
+        "vocal_probability",
+        "max_similarity"
+      ],
+      "additionalProperties": false
+    },
+    "thresholds_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "not_evaluated": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 3
+    },
+    "failures": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 0
+    }
+  },
+  "required": [
+    "schema_version",
+    "asset_id",
+    "status",
+    "scope",
+    "measurements",
+    "thresholds_version",
+    "not_evaluated",
+    "failures"
+  ],
+  "additionalProperties": false
+}

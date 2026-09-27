@@ -1,0 +1,32 @@
+[
+  {
+    "schema_version": "1.0.0",
+    "repetition": 1,
+    "source_commit": "df3a86b5507217ca4d8f43dbe3e7c3c62e2ee60d",
+    "exit_code": 0,
+    "elapsed_seconds": 381.75,
+    "log": "run-1.log",
+    "clean_source_export": true,
+    "kernel_network_denied": true
+  },
+  {
+    "schema_version": "1.0.0",
+    "repetition": 2,
+    "source_commit": "df3a86b5507217ca4d8f43dbe3e7c3c62e2ee60d",
+    "exit_code": 0,
+    "elapsed_seconds": 377.93,
+    "log": "run-2.log",
+    "clean_source_export": true,
+    "kernel_network_denied": true
+  },
+  {
+    "schema_version": "1.0.0",
+    "repetition": 3,
+    "source_commit": "df3a86b5507217ca4d8f43dbe3e7c3c62e2ee60d",
+    "exit_code": 0,
+    "elapsed_seconds": 382.76,
+    "log": "run-3.log",
+    "clean_source_export": true,
+    "kernel_network_denied": true
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "asset_id": "background",
+  "kind": "image",
+  "provider": "dummy",
+  "model": "local-algorithmic-fixture",
+  "model_version": "1.0.0",
+  "request_id": "e1c4c9100019e548f0672936",
+  "prompt": "Local geometric night-window test card; abstract, no people or branding.",
+  "negative_prompt": "vocals, speech, artist imitation",
+  "seed": 42,
+  "generated_at": "2026-09-27T13:57:49.276049+00:00",
+  "source_sha256": "d2361214db79663d30afe44871e6ab56861f12477972c4e7fc5a85735e394698",
+  "terms_url": null,
+  "usage": {
+    "cost_usd": 0,
+    "network_requests": 0
+  },
+  "intended_for_testing_only": true,
+  "source_path": "stages/visual_generate-001-f5c95c79/background.png",
+  "raw_response_path": "stages/visual_generate-001-f5c95c79/background.response.json"
+}

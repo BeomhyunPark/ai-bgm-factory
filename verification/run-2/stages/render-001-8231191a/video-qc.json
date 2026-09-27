@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "status": "passed",
+  "duration_seconds": 3600.0,
+  "video_duration": 3600.0,
+  "audio_duration": 3600.0,
+  "av_delta_seconds": 0.0,
+  "video_codec": "h264",
+  "audio_codec": "aac",
+  "width": 1280,
+  "height": 720,
+  "full_decode_passed": true
+}

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "duration_seconds": 3600.0,
+  "seed": 42,
+  "timezone": "Asia/Seoul",
+  "track_count": 8,
+  "sample_rate": 48000,
+  "width": 1280,
+  "height": 720,
+  "fps": 1,
+  "provider": "dummy",
+  "privacy_status": "private",
+  "intended_for_testing_only": true,
+  "human_approval_required": true
+}
