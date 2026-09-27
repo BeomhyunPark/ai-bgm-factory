@@ -32,6 +32,7 @@
 ## 5. 로드맵
 
 - [Phase 0~9](roadmap/PHASES.md)
+- [음악 API 후보 비교와 Phase 2 구현 순서](roadmap/MUSIC_PROVIDER_COMPARISON.md)
 - [위험 등록부](roadmap/RISK_REGISTER.md)
 
 ## 문서 상태 표기
