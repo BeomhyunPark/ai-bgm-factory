@@ -22,6 +22,16 @@ from .util import now, object_hash, scan_secrets, validate_run_id
 class RetryablePollError(Exception):
     """A read-only poll may be retried (e.g. 429, timeout, temporary 5xx)."""
 
+    def __init__(self, *, retry_after_seconds=None):
+        if retry_after_seconds is not None and (
+            type(retry_after_seconds) not in (int, float)
+            or not math.isfinite(retry_after_seconds)
+            or retry_after_seconds < 0
+        ):
+            raise FactoryError("Invalid retry delay")
+        self.retry_after_seconds = retry_after_seconds
+        super().__init__("Temporary polling failure")
+
 
 @dataclass(frozen=True)
 class JobResult:
@@ -182,8 +192,9 @@ class MusicJobRunner:
 
     def _initialize(self, db):
         version = db.execute("PRAGMA user_version").fetchone()[0]
-        if version not in (0, 1):
+        if version not in (0, 1, 2):
             raise FactoryError("Unsupported job ledger version")
+        db.execute("BEGIN IMMEDIATE")
         with db:
             db.execute("""CREATE TABLE IF NOT EXISTS jobs (
                 request_id TEXT PRIMARY KEY, run_id TEXT NOT NULL, identity TEXT NOT NULL,
@@ -194,7 +205,9 @@ class MusicJobRunner:
                 run_id TEXT NOT NULL, attempt INTEGER NOT NULL,
                 timestamp TEXT NOT NULL, stage TEXT NOT NULL,
                 status TEXT NOT NULL, duration_ms REAL NOT NULL)""")
-            db.execute("PRAGMA user_version=1")
+            if version < 2:
+                db.execute("ALTER TABLE jobs ADD COLUMN not_before REAL")
+            db.execute("PRAGMA user_version=2")
 
     def _reserve(self, db, run_id, request_id, identity, cents):
         started = self.clock()
@@ -224,7 +237,7 @@ class MusicJobRunner:
             ):
                 raise FactoryError("Job budget or daily request limit exceeded")
             db.execute(
-                "INSERT INTO jobs VALUES (?, ?, ?, ?, ?, NULL, 'reserved', NULL)",
+                "INSERT INTO jobs VALUES (?, ?, ?, ?, ?, NULL, 'reserved', NULL, NULL)",
                 (request_id, run_id, identity, day, cents),
             )
         self._event(db, request_id, "reserve", "reserved", started)
@@ -260,10 +273,19 @@ class MusicJobRunner:
 
     def _poll(self, db, request_id, job_id, reserved):
         deadline = self.clock() + self.limits.timeout_seconds
+        not_before = db.execute(
+            "SELECT not_before FROM jobs WHERE request_id=?", (request_id,)
+        ).fetchone()[0]
+        wait = max(0, (not_before or 0) - datetime.fromisoformat(self.timestamp()).timestamp())
+        if wait >= self.limits.timeout_seconds:
+            raise FactoryError("Provider retry window is still active; resume later")
+        if wait:
+            self.sleep(wait)
         for attempt in range(self.limits.max_polls):
             if self.clock() >= deadline:
                 break
             started = self.clock()
+            retry_delay = 0
             try:
                 result = self.provider.poll(job_id)
                 if (
@@ -276,7 +298,16 @@ class MusicJobRunner:
                     or (result.status != "succeeded" and result.cost_cents is not None)
                 ):
                     raise ValueError()
-            except RetryablePollError:
+            except RetryablePollError as error:
+                retry_delay = error.retry_after_seconds or 0
+                with db:
+                    db.execute(
+                        "UPDATE jobs SET not_before=? WHERE request_id=?",
+                        (
+                            datetime.fromisoformat(self.timestamp()).timestamp() + retry_delay,
+                            request_id,
+                        ),
+                    )
                 self._event(db, request_id, "poll", "retryable", started)
             except Exception:
                 self._update(db, request_id, "invalid")
@@ -288,7 +319,8 @@ class MusicJobRunner:
                     status = "invalid"
                 with db:
                     db.execute(
-                        "UPDATE jobs SET status=?, actual_cents=? WHERE request_id=?",
+                        "UPDATE jobs SET status=?, actual_cents=?, not_before=NULL "
+                        "WHERE request_id=?",
                         (status, result.cost_cents, request_id),
                     )
                 self._event(db, request_id, "poll", status, started)
@@ -306,6 +338,10 @@ class MusicJobRunner:
                     self.limits.base_delay_seconds * 2 ** min(attempt, 20),
                 )
                 delay *= 0.5 + 0.5 * self.jitter()
+                delay = max(delay, retry_delay)
+                if retry_delay and retry_delay >= deadline - self.clock():
+                    # Do not shorten a provider's requested cooldown to fit our deadline.
+                    break
                 self.sleep(min(delay, max(0, deadline - self.clock())))
         self._event(db, request_id, "poll", "exhausted", self.clock())
         raise FactoryError("Polling limit reached; resume the existing job")

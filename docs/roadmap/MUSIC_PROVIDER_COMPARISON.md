@@ -80,7 +80,8 @@ provider가 idempotency key를 지원하는지는 별도 검증한다. 로컬 ID
 
 2026-09-28 업데이트: [fake job adapter와 재시도·비용 계약 테스트](../architecture/MUSIC_JOBS.md)를
 기존 generate와 분리해 구현했다. 음악 provider 분리와 길이 계획도 generate에 적용했다.
-다음은 실제 adapter의 응답 fixture/transport 계약 준비와 서비스·예산·권리 근거 확정이다.
+[HTTP fixture/transport 계약](../architecture/MUSIC_HTTP.md)도 job runner에 연결했다.
+다음은 서비스·예산·권리 근거 확정과 live transport·원본 음원 보관 구현이다.
 실제 provider를 활성화하기 전에 채널 용도, 적용 API 계약과 계정 tier, 예산을 확정한다.
 API 키는 채팅·문서·fixture에 기록하지 않는다.
 

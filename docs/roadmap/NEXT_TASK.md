@@ -26,7 +26,8 @@ Python 3.12, FFmpeg, `.venv`와 dummy `.env`가 구성되어 있으며 API 키 �
 Stable Audio 3.0이 첫 기술 평가 후보이며 provider 구매·권리 승인·예산 확정은 아직 없다.
 네트워크 없는 [fake job adapter와 재시도·비용 계약 테스트](../architecture/MUSIC_JOBS.md)를 구현했다.
 음악 provider 분리와 capability에 맞는 8~12트랙 길이 계획도 구현했다.
-다음은 서비스·예산·권리 근거 확정 및 실제 adapter용 응답 fixture/transport 계약 준비다.
+[HTTP 응답 fixture/transport 계약](../architecture/MUSIC_HTTP.md)을 job runner에 연결했다.
+다음은 서비스·예산·권리 근거 확정과 live transport·원본 음원 보관 구현이다.
 실제 연결 전 아래 미확인 항목을 확정한다.
 
 1. 먼저 채널 청취 목적/장르 1개를 정한다. 예산이 미정이면 비교표를 먼저 만들고 결제는 하지 않는다.
@@ -45,7 +46,8 @@ Stable Audio 3.0이 첫 기술 평가 후보이며 provider 구매·권리 승�
 MUSIC_PROVIDER_COMPARISON.md의 공식 출처·미확인 항목·구현 순서를 먼저 확인하라.
 실제 음악 provider는 아직 승인하지 않았다. 기존 fake job 계약과 테스트를 확인하고,
 음악 provider 분리·길이 계획 구현을 보존하면서 실제 adapter의 HTTP timeout/Retry-After,
-raw response redaction·evidence 저장과 job lifecycle 연결을 fixture부터 준비하라.
+응답 evidence와 job lifecycle에 연결된 HTTP fixture 구현을 먼저 확인하라.
+live transport는 credential·multipart·streaming 크기 제한과 실제 음원 보관을 포함해야 한다.
 실제 연결 전 생성일 적용 API 약관과 서비스·예산을 확정하라.
 권리 상태를 추정하거나 dummy 테스트 예외를 실제 음악에 적용하지 말라.
 비용 발생 전에 선택한 서비스와 예산을 확정하고, 업로드/공개 기능을 활성화하지 말라.

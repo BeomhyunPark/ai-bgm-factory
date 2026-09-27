@@ -29,6 +29,10 @@ macOS에서 60분 smoke 포함 **101개 테스트 통과(212.07초)**.
 
 ## 전체 요약
 
+2026-09-28: HTTP fixture adapter를 job runner에 연결했다. timeout 인자, Retry-After와
+재개 후 cooldown, allowlist 응답 evidence 및 ledger v1→v2 migration을 구현했다.
+live transport·실제 API 호출·20개 실제 샘플 검증은 미실시다.
+
 | Phase | 목표 | 외부 side effect |
 |---:|---|---|
 | 0 | 기반·계약·정책 확정 | 없음 |

@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "origin": "synthetic contract examples, not captured provider traffic",
+  "last_reviewed_at": "2026-09-28",
+  "source": "https://platform.stability.ai/docs/api-reference",
+  "accepted": {"status": 202, "headers": {"content-type": "application/json"},
+    "body": {"id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"}},
+  "pending": {"status": 202, "headers": {}, "body": {}},
+  "rate_limited": {"status": 429, "headers": {"Retry-After": "3"}, "body": {}},
+  "unavailable": {"status": 503, "headers": {}, "body": {}},
+  "rejected": {"status": 403, "headers": {}, "body": {"errors": ["fixture rejection"]}}
+}
